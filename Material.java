@@ -6,9 +6,9 @@ public class Material extends Entity{
     }
     public Material(String name, String description, int id, double level1, double level2, double level3){
     super(name, description, id);
-    this.level1 = level1;
-    this.level2 = level2;
-    this.level3 = level3;
+    this.level1=level1;
+    this.level2=level2;
+    this.level3=level3;
     }
     public String getDetails(){
             return(" Level-1 is: " + this.getLevel1() + "\n Level-2 is: " + this.getLevel2() + "\n Level-3 is: " + this.getLevel3()");
