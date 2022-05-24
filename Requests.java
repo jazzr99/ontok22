@@ -28,7 +28,7 @@ public class Requests extends RequestDonationList {
                 level=((Material) requestDonation.getEntity()).getLevel3();
             }
             else{
-                System.out.println("Thiw is not acceptable." /n "Please try again.");
+                System.out.println("This is not acceptable." /n "Please try again.");
             }
         }
         for(RequestDonation receivedMaterial : beneficiary.getReceivedList().getRdEntities()){
