@@ -1,12 +1,12 @@
 public class Admin extends User{  
-    private boolean Administrator = true;
+    private boolean isAdmin = true;
     public Admin(){}
     public Admin(String name, String phone){
         super(name, phone);
     }
     public boolean getAdmin(){
-        return Administrator;
+        return isAdmin;
     }
     public void setAdmin(boolean admin){
-        Administrator = admin;
+        isAdmin = admin;
     }}
