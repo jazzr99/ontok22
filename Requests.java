@@ -12,14 +12,13 @@ public class Requests extends RequestDonationList {
         }
         catch(NonExistenceException nef)
         { nef.getMessage();
-        }
-    }
+        } }
     public boolean validRequestDonation(Beneficiary beneficiary, RequestDonation requestDonation){
         double level=0;
         double totalQuantity=0;
         if (requestDonation.getEntity() instanceof Material){
             if(beneficiary.getNoPersons()==1){
-                level = ((Material) requestDonation.getEntity()).getLevel1();
+                level=((Material) requestDonation.getEntity()).getLevel1();
             }
             else if(beneficiary.getNoPersons()>=2 && beneficiary.getNoPersons()<=4){
                 level=((Material) requestDonation.getEntity()).getLevel2();
@@ -29,13 +28,11 @@ public class Requests extends RequestDonationList {
             }
             else{
                 System.out.println("This is not acceptable." /n "Please try again.");
-            }
-        }
+            } }
         for(RequestDonation receivedMaterial : beneficiary.getReceivedList().getRdEntities()){
             if(((Material) requestDonation.getEntity()).equals((Material) receivedMaterial.getEntity())){
                 totalQuantity += receivedMaterial.getQuantity();
-            }
-        }
+            } }
         totalQuantity += requestDonation.getQuantity();
         if(totalQuantity>level){
             return false;
@@ -48,10 +45,10 @@ public class Requests extends RequestDonationList {
         while(iterator.hasNext()){
             RequestDonation requestDonationIterator=(RequestDonation) iterator.next();
             if(!entityList.contains(requestDonationIterator.getEntity())) {
-                throw new NoEntityFoundException("There is no such entity in  organization's entityList");
+                throw new NonExistenceException("This entity does not exist in the organization!");
             }
             if(!validRequestDonation(beneficiary,requestDonationIterator)){
-                throw new NoValidDonationException("No Donation For Beneficiary");
+                throw new InvalidDonationException("Sorry, this donation is invalid.");
             }
             getRdEntities().remove(requestDonationIterator);
             currentDonations.get(requestDonationIterator.getEntity().getId()).setQuantity(currentDonations.getQuantity() - requestDonationIterator.getQuantity());
