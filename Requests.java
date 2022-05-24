@@ -15,16 +15,16 @@ public class Requests extends RequestDonationList {
         }
     }
     public boolean validRequestDonation(Beneficiary beneficiary, RequestDonation requestDonation) {
-        double level = 0;
-        double totalQuantity = 0;
+        double level=0;
+        double totalQuantity=0;
         if (requestDonation.getEntity() instanceof Material) {
-            if(beneficiary.getNoPersons() == 1){
+            if(beneficiary.getNoPersons()==1){
                 level = ((Material) requestDonation.getEntity()).getLevel1();
             }
-            else if(beneficiary.getNoPersons() >= 2 && beneficiary.getNoPersons() <=4){
-                level = ((Material) requestDonation.getEntity()).getLevel2();
-            }else if(beneficiary.getNoPersons() >=5){
-                level = ((Material) requestDonation.getEntity()).getLevel3();
+            else if(beneficiary.getNoPersons()>=2 && beneficiary.getNoPersons()<=4){
+                level=((Material) requestDonation.getEntity()).getLevel2();
+            }else if(beneficiary.getNoPersons()>=5){
+                level=((Material) requestDonation.getEntity()).getLevel3();
             }else{
                 System.out.println("No acceptable number of persons");
             }
@@ -35,17 +35,16 @@ public class Requests extends RequestDonationList {
             }
         }
         totalQuantity += requestDonation.getQuantity();
-
-        if(totalQuantity > level){
+        if(totalQuantity>level){
             return false;
         }
         return true;
     }
     public void commit(List<Entity> entityList, Beneficiary beneficiary, RequestDonationList currentDonations){
 
-        Iterator iterator = getRdEntities().iterator();
+        Iterator iterator=getRdEntities().iterator();
         while(iterator.hasNext()){
-            RequestDonation requestDonationIterator = (RequestDonation) iterator.next();
+            RequestDonation requestDonationIterator=(RequestDonation) iterator.next();
             if(!entityList.contains(requestDonationIterator.getEntity())) {
                 throw new NoEntityFoundException("There is no such entity in  organization's entityList");
             }
