@@ -2,21 +2,17 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class RequestDonationList extends RequestDonation
-{
-   
+{  
     private List<RequestDonation> rdEntities = new ArrayList<>();
-    
     public RequestDonation get(int id)
     {    
        RequestDonation requestDonation = new RequestDonation();
        for (RequestDonation rd:rdEntities){
            if (rd.getEntity().getId() == id){
                requestDonation = rd;
-           }
-        }
+           }}
         return requestDonation;
-    }
-        
+    }      
     public void add(RequestDonation requestDonation, List<Entity> entityList)
     {
         if(!entityList.contains(requestDonation.getEntity())) {
