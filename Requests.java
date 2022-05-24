@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Requests extends RequestDonationList {
 
-    public void add(RequestDonation requestDonation, List<Entity> entityList, Beneficiary beneficiary) {
+    public void add(RequestDonation requestDonation, List<Entity> entityList, Beneficiary beneficiary){
         try{
             if(!validRequestDonation(beneficiary,requestDonation)){
                 throw new InvalidDonationException("Sorry, this donation is invalid.");
@@ -14,18 +14,20 @@ public class Requests extends RequestDonationList {
         { nef.getMessage();
         }
     }
-    public boolean validRequestDonation(Beneficiary beneficiary, RequestDonation requestDonation) {
+    public boolean validRequestDonation(Beneficiary beneficiary, RequestDonation requestDonation){
         double level=0;
         double totalQuantity=0;
-        if (requestDonation.getEntity() instanceof Material) {
+        if (requestDonation.getEntity() instanceof Material){
             if(beneficiary.getNoPersons()==1){
                 level = ((Material) requestDonation.getEntity()).getLevel1();
             }
             else if(beneficiary.getNoPersons()>=2 && beneficiary.getNoPersons()<=4){
                 level=((Material) requestDonation.getEntity()).getLevel2();
-            }else if(beneficiary.getNoPersons()>=5){
+            }
+            else if(beneficiary.getNoPersons()>=5){
                 level=((Material) requestDonation.getEntity()).getLevel3();
-            }else{
+            }
+            else{
                 System.out.println("No acceptable number of persons");
             }
         }
