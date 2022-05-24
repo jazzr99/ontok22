@@ -10,7 +10,7 @@ public class Requests extends RequestDonationList {
             }
             super.add(requestDonation, entityList);
         }
-        catch(NoExistanceException nef)
+        catch(NonExistenceException nef)
         { nef.getMessage();
         }
     }
