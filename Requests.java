@@ -11,13 +11,10 @@ public class Requests extends RequestDonationList {
             super.add(requestDonation, entityList);
         }
         catch(NoEntityFoundException nef)
-        {
-            nef.getMessage();
+        { nef.getMessage();
         }
     }
-
     public boolean validRequestDonation(Beneficiary beneficiary, RequestDonation requestDonation) {
-
         double level = 0;
         double totalQuantity = 0;
         if (requestDonation.getEntity() instanceof Material) {
@@ -32,22 +29,18 @@ public class Requests extends RequestDonationList {
                 System.out.println("No acceptable number of persons");
             }
         }
-
         for(RequestDonation receivedMaterial : beneficiary.getReceivedList().getRdEntities()){
             if(((Material) requestDonation.getEntity()).equals((Material) receivedMaterial.getEntity())){
                 totalQuantity += receivedMaterial.getQuantity();
             }
         }
-
         totalQuantity += requestDonation.getQuantity();
 
         if(totalQuantity > level){
             return false;
         }
-
         return true;
     }
-
     public void commit(List<Entity> entityList, Beneficiary beneficiary, RequestDonationList currentDonations){
 
         Iterator iterator = getRdEntities().iterator();
@@ -62,6 +55,4 @@ public class Requests extends RequestDonationList {
             getRdEntities().remove(requestDonationIterator);
             currentDonations.get(requestDonationIterator.getEntity().getId()).setQuantity(currentDonations.getQuantity() - requestDonationIterator.getQuantity());
             beneficiary.getReceivedList().getRdEntities().add(requestDonationIterator);
-        }
-    }
-}
+        } } }
