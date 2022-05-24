@@ -7,13 +7,13 @@ public abstract class User {
      this.name=new String(name);
      this.phone=new String(phone);
     }
-    public String getPhone() {
+    public String getPhone(){
         return phone;
     }
-    public void setPhone(String phone) {
+    public void setPhone(String phone){
         this.phone=phone;
     }
-    public String getName() {
+    public String getName(){
         return name;
     }
     public void setName(String name) {
