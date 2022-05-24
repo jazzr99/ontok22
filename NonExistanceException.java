@@ -1,6 +1,6 @@
-public class NonExistanceException extends RuntimeException{
+public class NonExistenceException extends RuntimeException{
 
-    public NonExistanceException(String message) {
+    public NonExistenceException(String message) {
         super(message);
     }
 }
