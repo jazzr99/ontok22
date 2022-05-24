@@ -1,6 +1,6 @@
-public class NoEntityFoundException extends RuntimeException{
+public class NonExistanceException extends RuntimeException{
 
-    public NoEntityFoundException(String message) {
+    public NonExistanceException(String message) {
         super(message);
     }
 }
