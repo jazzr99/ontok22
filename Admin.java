@@ -8,5 +8,5 @@ public class Admin extends User{
         return isAdmin;
     }
     public void setAdmin(boolean admin){
-        isAdmin = admin;
+        isAdmin=admin;
     }}
