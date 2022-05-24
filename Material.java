@@ -11,7 +11,7 @@ public class Material extends Entity{
     this.level3 = level3;
     }
     public String getDetails(){
-            return(" Level1 is: " + this.getLevel1() + "\n Level2 is: " + this.getLevel2() + "\n Level3 is: " + this.getLevel3()");
+            return(" Level-1 is: " + this.getLevel1() + "\n Level-2 is: " + this.getLevel2() + "\n Level-3 is: " + this.getLevel3()");
         }
     public int getNoPersons () {
             return noPersons;
