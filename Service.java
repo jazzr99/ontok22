@@ -3,8 +3,6 @@
     public Service(String name,String description,int id){
         super(name,description,id);
     }
-
     public String getDetails(){
-        return("This donation is Service");
-    }
-}
+        return("This donation is a Service");
+    }}
