@@ -6,7 +6,7 @@ public class Requests extends RequestDonationList {
     public void add(RequestDonation requestDonation, List<Entity> entityList, Beneficiary beneficiary) {
         try{
             if(!validRequestDonation(beneficiary,requestDonation)){
-                throw new NoValidDonationException("No Donation For Beneficiary");
+                throw new InvalidDonationException("No Donation For Beneficiary");
             }
             super.add(requestDonation, entityList);
         }
