@@ -1,5 +1,4 @@
 public abstract class Entity {
-
     private String name;
     private String description;
     private int id;
