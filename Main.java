@@ -35,11 +35,11 @@ public class Main{
 
         Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210", 3);
  
-        Donator donator01 = new Donator("Rahaenys", "22340221", 2);
+        Beneficiary beneficiary02 = new Beneficiary("Rahaenys", "22340221", 2);
 
-        Donator donato02 = new Donator("Maegor", "22810221");
+        Donator donato01 = new Donator("Maegor", "22810221");
  
-        Requests requestsForBeneficiary1 = new Requests();
+        Requests requestsForBeneficiary01 = new Requests();
  
         RequestDonation requestDonationForBeneficiary1 = new RequestDonation(milk, 1);
  
