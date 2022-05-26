@@ -1,4 +1,4 @@
-public class ExistedException extends RuntimeException{
-    public ExistedException(String message){
+public class ExistingException extends RuntimeException{
+    public ExistingException(String message){
         super(message);
     }}
