@@ -15,9 +15,9 @@ public class Main{
     
         Service MedicalSupport = new Service("Medical Support","Provided by experts in Famiy Medicine.",4);
 
-        Service NurserySupport = new Service("Nursery Support","Provided by certified nursery care givers",5);
+        Service NurserySupport = new Service("Nursery Support","Provided by certified nursery care givers.",5);
 
-        Service BabySitting = new Service("BabySitting","baby sitting",6);
+        Service BabySitting = new Service("BabySitting","Provided by Primary Education students.",6);
 
         entityList.add(milk);
 
@@ -31,13 +31,13 @@ public class Main{
 
         entityList.add(BabySitting);
 
-        Admin admin = new Admin("Ilias", "34634673");
+        Admin admin = new Admin("Aegon", "26102210");
 
-        Beneficiary beneficiary1 = new Beneficiary("Tzilda", "0322230", 3);
+        Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210", 3);
  
-        Beneficiary beneficiary2 = new Beneficiary("Aristea", "0239203", 2);
+        Donator donator01 = new Donator("Rahaenys", "22340221", 2);
 
-        Donator donator = new Donator("Takis", "462456");
+        Donator donato02 = new Donator("Maegor", "22810221");
  
         Requests requestsForBeneficiary1 = new Requests();
  
