@@ -39,11 +39,11 @@ public class Main{
 
         Donator donato01 = new Donator("Maegor", "22810221");
  
-        Requests requestsForBeneficiary01 = new Requests();
+        Requests requestsBe01 = new Requests();
  
-        RequestDonation requestDonationForBeneficiary1 = new RequestDonation(milk, 1);
+        RequestDonation requestFromBeneficiary01 = new RequestDonation(rice, 3);
  
-        requestsForBeneficiary1.add(requestDonationForBeneficiary1, entityList, beneficiary1);
+        requestsBe01.add(requestFromBeneficiary01, entityList, beneficiary01);
  
         RequestDonation requestDonation2ForBeneficiary1 = new RequestDonation(sugar, 2);
   
