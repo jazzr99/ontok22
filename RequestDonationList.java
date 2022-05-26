@@ -16,7 +16,7 @@ public class RequestDonationList extends RequestDonation
     public void add(RequestDonation requestDonation, List<Entity> entityList)
     {
         if(!entityList.contains(requestDonation.getEntity())) {
-            throw new NoEntityFoundException("This entity does not exist in the organization!");
+            throw new NonExistenceException("This entity does not exist in the organization!");
         }
         for (RequestDonation donation:rdEntities){
                 if(requestDonation.equals(donation.getEntity())){
