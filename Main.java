@@ -13,9 +13,9 @@ public class Main{
 
         Material rice = new Material("Rice","Basmati rice. (250g)", 3, 2.0, 4.0, 8.0);
     
-        Service MedicalSupport = new Service("MedicalSupport","medical care",4);
+        Service MedicalSupport = new Service("Medical Support","Provided by experts in Famiy Medicine.",4);
 
-        Service NurserySupport = new Service("NurserySupport","nursery care",5);
+        Service NurserySupport = new Service("Nursery Support","Provided by certified nursery care givers",5);
 
         Service BabySitting = new Service("BabySitting","baby sitting",6);
 
