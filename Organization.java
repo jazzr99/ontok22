@@ -142,10 +142,9 @@ public class Organization {
     public void setCurrentDonations(RequestDonationList currentDonations) {
         this.currentDonations=currentDonations;
     }
-}
 
     public void setDonatorList(List<Donator> donatorList) {
         this.donatorList=donatorList;
     }
-
+}
   
