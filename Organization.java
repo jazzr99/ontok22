@@ -105,7 +105,7 @@ public class Organization {
     }
     
     public void setAdmin (Admin admin) {
-        this.admin=dmin;
+        this.admin=admin;
     }
 
     public String getName() {
