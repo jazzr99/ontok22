@@ -7,11 +7,11 @@ public class Main{
 
         Organization organization=new Organization();
     
-        Material milk = new Material("milk","dairy", 1, 1.0, 3.0, 6.0);
+        Material milk = new Material("Milk","Long life cow milk. (1.5L)", 1, 2.0, 4.0, 10.0);
 
-        Material sugar = new Material("sugar","dried food", 2, 1.0, 3.0, 6.0);
+        Material sugar = new Material("Sugar","White granulated sugar. (500g)", 2, 1.0, 4.0, 8.0);
 
-        Material rice = new Material("rice","dried food", 3, 1.0, 3.0, 6.0);
+        Material rice = new Material("Rice","Basmati rice. (250g)", 3, 2.0, 4.0, 8.0);
     
         Service MedicalSupport = new Service("MedicalSupport","medical care",4);
 
