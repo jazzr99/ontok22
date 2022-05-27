@@ -37,7 +37,7 @@ public class Menu
         else if(scan_number==2102210)
         {System.out.println("Hello Visenya");} 
         else if(scan_number==22340221)
-        {System.out.println("Hello Rahaenys");} 
+        {System.out.println("Hello Rhaenys");} 
         else if(scan_number==22810221)
         {System.out.println("Hello Maegor");} 
         else
