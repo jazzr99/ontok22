@@ -19,31 +19,19 @@ public class Menu
        {
        menu.phone();
        }
-      else {}
-      String i = SCAN_1;
-      
-      menu.phone();
-  
-      Scanner scan_1 = new Scanner(System.in);
-      Integer SCAN_1 = scan_1.nextInt();
-      int i = SCAN_1;
-      
-      if(i == 1){menu5.menuadmin();}
-      else if(i == 2){menu5.runMenu();}
-      else if(i == 3){menu5.runMenu();}
-      else if(i == 4){menu5.runMenu2();}
-      else if(i == 5){menu5.runMenu2();}
-      else if(i == 6){menu5.runMenu();}
-      
-    }
+      else 
+      {
+       menu.signing_up();
+      }
+
+  }
  
  public void phone()
     {
-        System.out.println("WELCOME");
         System.out.println("Please enter your phone number:");
         
-        Scanner phonenumber = new Scanner(System.in);
-        Integer Phonenumber = phonenumber.nextInt();
+        Scanner scan_number = new Scanner(System.in);
+        Integer scan_number = scan_number.nextInt();
         int a = Phonenumber;
         String s = String.valueOf(a);
     
