@@ -7,7 +7,7 @@ import java.io.*;
 public class Menu
 {
  public static void main(String[] args)
- {
+  {
       Menu menu = new Menu();
       
       System.out.println("Welcome!/nDo you have an existing account? (yes/no)")
@@ -23,8 +23,7 @@ public class Menu
       {
        menu.signing_up();
       }
-
-  }
+   }
  
  public void phone()
     {
@@ -32,17 +31,14 @@ public class Menu
         
         Scanner scan_number = new Scanner(System.in);
         Integer scan_number = scan_number.nextInt();
-        int a = Phonenumber;
-        String s = String.valueOf(a);
     
-        
-        if(a == 34634673)
+        if(x==26102210)
         {System.out.println("Hello admin");}
-        else if(a == 0322230)
+        else if(scan_number==2102210)
         {System.out.println("Hello beneficiary1");} 
-        else if(a == 239203)
+        else if(scan_number==22340221)
         {System.out.println("Hello beneficiary2");} 
-        else if(a == 462456)
+        else if(scan_number==22810221)
         {System.out.println("Hello donator");} 
         else
         {
