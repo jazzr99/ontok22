@@ -4,13 +4,13 @@ import java.util.Scanner;
 import java.io.*;
 
 
-public class Menu5
+public class Menu
 {
  public static void main(String[] args)
  {
-      Menu5 menu5 = new Menu5();
-      menu5.phone();
-      System.out.println("If you are admin press 1");
+      Menu5 menu = new Menu();
+      menu.phone();
+      System.out.println("Are you an Admin? (y/n)");
       System.out.println("If you are beneficiary1 press 2");
       System.out.println("If you are beneficiary2 press 3");
       System.out.println("If you are donator press 4");
