@@ -33,13 +33,21 @@ public class Menu
         Integer scan_number = scannumber.nextInt();
     
         if(scan_number==26102210)
-        {System.out.println("Hello Aegon");}
+        {System.out.println("Hello Aegon");
+          menu.menuadmin();
+        }
         else if(scan_number==2102210)
-        {System.out.println("Hello Visenya");} 
+        {System.out.println("Hello Visenya");
+          menu.beneficiary();
+        } 
         else if(scan_number==22340221)
-        {System.out.println("Hello Rhaenys");} 
+        {System.out.println("Hello Rhaenys");
+          menu.beneficiary();
+        }
         else if(scan_number==22810221)
-        {System.out.println("Hello Maegor");} 
+        {System.out.println("Hello Maegor");
+          menu.donator();
+        } 
         else
         {
             System.out.println("Do you want to sign up as donator or beneficiary?");
