@@ -39,9 +39,10 @@ public class Main{
 
         Donator donato01 = new Donator01("Maegor", "22810221");
         
-        /* Benefiaciary01 asks for rice */
  
         Requests requestsBe01 = new Requests();
+        
+        /* Benefiaciary01 asks for rice */
  
         RequestDonation requestFromBeneficiary01_1 = new RequestDonation(rice,3);
  
@@ -59,12 +60,20 @@ public class Main{
   
         requestsForBeneficiary1.add(requestFromBeneficiary01_3), entityList, beneficiary1);
         
-        /* Donator offers*/
     
         Offers offersDo01 = new Offers();
+        
+        /* Donator offers Nursery Support*/
     
-        RequestDonation requestForfDonator01 = new RequestDonation(NurserySupport, 5);
+        RequestDonation requestForfDonator01_1 = new RequestDonation(NurserySupport, 5);
     
-        offersDo01.add(requestForfDonator01), entityList);
+        offersDo01.add(requestForfDonator01_1), entityList);
+        
+        /* Donator offers Medical Support*/
+    
+        RequestDonation requestForfDonator01_2 = new RequestDonation(MedicalSupport, 4);
+    
+        offersDo01.add(requestForfDonator01_2), entityList);
+        
     }
 }
