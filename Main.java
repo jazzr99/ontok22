@@ -37,7 +37,7 @@ public class Main{
  
         Beneficiary beneficiary02 = new Beneficiary("Rahaenys", "22340221",2);
 
-        Donator donato01 = new Donator01("Maegor", "22810221");
+        Donator donato01 = new Donator("Maegor", "22810221");
         
  
         Requests requestsBe01 = new Requests();
@@ -58,7 +58,7 @@ public class Main{
   
         RequestDonation requestFromBeneficiary01_3 = new RequestDonation(MedicalSupport,3);
   
-        requestsBe01.add(requestFromBeneficiary01_3), entityList, beneficiary1);
+        requestsBe01.add(requestFromBeneficiary01_3, entityList, beneficiary01);
         
     
         Offers offerDo01 = new Offers();
@@ -67,13 +67,13 @@ public class Main{
     
         RequestDonation requestForfDonator01_1 = new RequestDonation(NurserySupport, 5);
     
-        offerDo01.add(requestForfDonator01_1), entityList);
+        offerDo01.add(requestForfDonator01_1, entityList);
         
         /* Donator offers Medical Support*/
     
         RequestDonation requestForfDonator01_2 = new RequestDonation(MedicalSupport, 4);
     
-        offerDo01.add(requestForfDonator01_2), entityList);
+        offerDo01.add(requestForfDonator01_2, entityList);
         
     }
 }
