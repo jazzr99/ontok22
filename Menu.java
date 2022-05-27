@@ -10,10 +10,10 @@ public class Menu
   {
       Menu menu = new Menu();
       
-      System.out.println("Welcome!/nDo you have an existing account? (yes/no)")
+      System.out.println("Welcome!/nDo you have an existing account? (yes/no)");
        
       Scanner scanner1 = new Scanner(System.in);
-      String scanner1 = scanner1.nextLine();
+      String scanner_1 = scanner1.nextLine();
   
       if(scanner_1=="yes")
        {
@@ -29,8 +29,8 @@ public class Menu
     {
         System.out.println("Please enter your phone number:");
         
-        Scanner scan_number = new Scanner(System.in);
-        Integer scan_number = scan_number.nextInt();
+        Scanner scannumber = new Scanner(System.in);
+        Integer scan_number = scannumber.nextInt();
     
         if(scan_number==26102210)
         {System.out.println("Hello Aegon");}
