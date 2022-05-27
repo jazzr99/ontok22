@@ -32,14 +32,14 @@ public class Menu
         Scanner scan_number = new Scanner(System.in);
         Integer scan_number = scan_number.nextInt();
     
-        if(x==26102210)
-        {System.out.println("Hello admin");}
+        if(scan_number==26102210)
+        {System.out.println("Hello Aegon");}
         else if(scan_number==2102210)
-        {System.out.println("Hello beneficiary1");} 
+        {System.out.println("Hello Visenya");} 
         else if(scan_number==22340221)
-        {System.out.println("Hello beneficiary2");} 
+        {System.out.println("Hello Rahaenys");} 
         else if(scan_number==22810221)
-        {System.out.println("Hello donator");} 
+        {System.out.println("Hello Maegor");} 
         else
         {
             System.out.println("Do you want to sign up as donator or beneficiary?");
