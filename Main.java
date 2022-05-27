@@ -13,9 +13,9 @@ public class Main{
 
         Material rice = new Material("Rice","Basmati rice. (250g)", 3, 2.0, 4.0, 8.0);
     
-        Service MedicalSupport = new Service("Medical Support","Provided by experts in Famiy Medicine.",4);
+        Service MedicalSupport = new Service("MedicalSupport","Provided by experts in Famiy Medicine.",4);
 
-        Service NurserySupport = new Service("Nursery Support","Provided by certified nursery care givers.",5);
+        Service NurserySupport = new Service("NurserySupport","Provided by certified nursery care givers.",5);
 
         Service BabySitting = new Service("BabySitting","Provided by Primary Education students.",6);
 
@@ -33,30 +33,38 @@ public class Main{
 
         Admin admin = new Admin("Aegon", "26102210");
 
-        Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210", 3);
+        Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210",3);
  
-        Beneficiary beneficiary02 = new Beneficiary("Rahaenys", "22340221", 2);
+        Beneficiary beneficiary02 = new Beneficiary("Rahaenys", "22340221",2);
 
-        Donator donato01 = new Donator("Maegor", "22810221");
+        Donator donato01 = new Donator01("Maegor", "22810221");
+        
+        /* Benefiaciary01 asks for rice */
  
         Requests requestsBe01 = new Requests();
  
-        RequestDonation requestFromBeneficiary01 = new RequestDonation(rice, 3);
+        RequestDonation requestFromBeneficiary01_1 = new RequestDonation(rice,3);
  
-        requestsBe01.add(requestFromBeneficiary01, entityList, beneficiary01);
+        requestsBe01.add(requestFromBeneficiary01_1, entityList, beneficiary01);
+        
+        /* Benefiaciary01 asks for milk */
  
-        RequestDonation requestDonation2ForBeneficiary1 = new RequestDonation(sugar, 2);
+        RequestDonation requestFromBeneficiary01_2 = new RequestDonation(milk,1);
   
-        requestsForBeneficiary1.add(requestDonation2ForBeneficiary1, entityList, beneficiary1);
+        requestsBe01.add(requestFromBeneficiary01_2, entityList, beneficiary01);
+        
+        /* Benefiaciary01 asks for Medical Support */
   
-        RequestDonation requestDonation3ForBeneficiary1 = new RequestDonation(MedicalSupport, 3);
+        RequestDonation requestFromBeneficiary01_3 = new RequestDonation(MedicalSupport,3);
   
-        requestsForBeneficiary1.add(requestDonation3ForBeneficiary1, entityList, beneficiary1);
+        requestsForBeneficiary1.add(requestFromBeneficiary01_3), entityList, beneficiary1);
+        
+        /* Donator offers*/
     
-        Offers offerOfDonator = new Offers();
+        Offers offersDo01 = new Offers();
     
-        RequestDonation requestDonationOfDonator = new RequestDonation(BabySitting, 4);
+        RequestDonation requestForfDonator01 = new RequestDonation(NurserySupport, 5);
     
-        offerOfDonator.add(requestDonationOfDonator, entityList);
+        offersDo01.add(requestForfDonator01), entityList);
     }
 }
