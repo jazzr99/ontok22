@@ -8,15 +8,22 @@ public class Menu
 {
  public static void main(String[] args)
  {
-      Menu5 menu = new Menu();
-      menu.phone();
-      System.out.println("Are you an Admin? (y/n)");
-      System.out.println("If you are beneficiary1 press 2");
-      System.out.println("If you are beneficiary2 press 3");
-      System.out.println("If you are donator press 4");
-      System.out.println("If you are newDonator press 5");
-      System.out.println("If you are newBeneficiary press 6");
+      Menu menu = new Menu();
       
+      System.out.println("Welcome!/nDo you have an existing account? (yes/no)")
+       
+      Scanner scanner1 = new Scanner(System.in);
+      String scanner1 = scanner1.nextLine();
+  
+      if(scanner_1=="yes")
+       {
+       menu.phone();
+       }
+      else {}
+      String i = SCAN_1;
+      
+      menu.phone();
+  
       Scanner scan_1 = new Scanner(System.in);
       Integer SCAN_1 = scan_1.nextInt();
       int i = SCAN_1;
