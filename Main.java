@@ -58,22 +58,22 @@ public class Main{
   
         RequestDonation requestFromBeneficiary01_3 = new RequestDonation(MedicalSupport,3);
   
-        requestsForBeneficiary1.add(requestFromBeneficiary01_3), entityList, beneficiary1);
+        requestsBe01.add(requestFromBeneficiary01_3), entityList, beneficiary1);
         
     
-        Offers offersDo01 = new Offers();
+        Offers offerDo01 = new Offers();
         
         /* Donator offers Nursery Support*/
     
         RequestDonation requestForfDonator01_1 = new RequestDonation(NurserySupport, 5);
     
-        offersDo01.add(requestForfDonator01_1), entityList);
+        offerDo01.add(requestForfDonator01_1), entityList);
         
         /* Donator offers Medical Support*/
     
         RequestDonation requestForfDonator01_2 = new RequestDonation(MedicalSupport, 4);
     
-        offersDo01.add(requestForfDonator01_2), entityList);
+        offerDo01.add(requestForfDonator01_2), entityList);
         
     }
 }
