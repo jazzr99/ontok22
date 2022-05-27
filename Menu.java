@@ -48,30 +48,32 @@ public class Menu
         {System.out.println("Hello Maegor");
           menu.donator();
         } 
-        else
-        {
-            System.out.println("Do you want to sign up as donator or beneficiary?");
-            System.out.println("Press 1 for donator or 2 for beneficiary?");
+    }
+ 
+ public void signing_up()
+   {
+            System.out.println("Would you like to become donator or beneficiary? (b/d)");
             
-            Scanner Number = new Scanner(System.in);
-            Integer Number1 = Number.nextInt();
-            int b = Number1;
+            Scanner scanChoice = new Scanner(System.in);
+            String scanChoice = scanChoice.nextInt();
             
-            if(b == 1)
-            {
-                Donator newDonator = new Donator("NewDonator",s);
-                System.out.println("Name: " + newDonator.getName() + " " + "Phone: " + newDonator.getPhone());
-            }             
-            else if(b == 2)
+            if(scanchoice == b)
             {
                 Beneficiary newBeneficiary = new Beneficiary("NewBeneficiary",s,1);
-                System.out.println("Name: " + newBeneficiary.getName() + " " + "Phone: " + newBeneficiary.getPhone() + "NoPersons: " + newBeneficiary.getNoPersons());
+                System.out.println("Name: " + newBeneficiary.getName());
+                System.out.println("Phone: " + newBeneficiary.getPhone());
+                System.out.println("NoPersons: " + newBeneficiary.getNoPersons());
+            }             
+            else if(scanChoice == d)
+            {
+                Donator newDonator = new Donator("NewDonator",s);
+                System.out.println("Name: " + newDonator.getName());
+                System.out.println("Phone: " + newDonator.getPhone());
             }
    
         }
     
     }
- 
  
  
  public void menuadmin()
