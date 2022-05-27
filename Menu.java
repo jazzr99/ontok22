@@ -55,23 +55,22 @@ public class Menu
             System.out.println("Would you like to become donator or beneficiary? (b/d)");
             
             Scanner scanChoice = new Scanner(System.in);
-            String scanChoice = scanChoice.nextInt();
+            String scan_choice = scanChoice.nextLine();
             
-            if(scanchoice == b)
+            if(scan_choice == "b")
             {
                 Beneficiary newBeneficiary = new Beneficiary("NewBeneficiary",s,1);
                 System.out.println("Name: " + newBeneficiary.getName());
                 System.out.println("Phone: " + newBeneficiary.getPhone());
                 System.out.println("NoPersons: " + newBeneficiary.getNoPersons());
             }             
-            else if(scanChoice == d)
+            else if(scan_choice == "d")
             {
                 Donator newDonator = new Donator("NewDonator",s);
                 System.out.println("Name: " + newDonator.getName());
                 System.out.println("Phone: " + newDonator.getPhone());
             }
    
-        }
     
     }
  
