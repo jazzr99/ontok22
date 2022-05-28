@@ -37,7 +37,7 @@ public class Main{
  
         Beneficiary beneficiary02 = new Beneficiary("Rhaenys", "22340221",2);
 
-        Donator donato01 = new Donator("Maegor", "22810221");
+        Donator donator01 = new Donator("Maegor", "22810221");
         
  
         Requests requestsBe01 = new Requests();
