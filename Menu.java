@@ -86,10 +86,10 @@ public class Menu
     Scanner scanAdminChoice = new Scanner(System.in);
     String scanAdmin_choice = scanAdminChoice.nextLine();
     
-    /*boolean exit;    xreiazete auto????? */
+    boolean exit;
     switch(scanAdmin_choice)
     {
-    case 1: System.out.println("You choce View.");
+    case "v": System.out.println("You choce View.");
     System.out.println("Select a category:");
     System.out.println("1.Material");
     System.out.println("2.Services");
@@ -169,7 +169,7 @@ public class Menu
       } 
     break;
     
-    case 2: System.out.println("You choce Monitor Organization:");
+    case "mo": System.out.println("You choce Monitor Organization:");
     System.out.println("Press one of the following options:");
     System.out.println("a.List Beneficiaries");
     System.out.println("b.List Donators");
@@ -310,16 +310,16 @@ public class Menu
     }
     break;
     
-    case 3: System.out.println("Back:");
+    case "b": System.out.println("Back:");
     break;
     
-    case 4: 
+    case "l": 
      System.out.println("Υou are disconnected.");
      System.out.println("Do you want to sign in?.");
      logout("phone");
     break;
     
-    case 5: System.out.println("Exit:");
+    case "e": System.out.println("Exit:");
     exit = true;
     break;
     
