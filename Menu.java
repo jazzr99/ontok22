@@ -51,7 +51,7 @@ public class Menu
     }
  
  public void signing_up()
-   {
+  {
             System.out.println("Would you like to become donator or beneficiary? (b/d)");
             
             Scanner scanChoice = new Scanner(System.in);
@@ -70,80 +70,75 @@ public class Menu
                 System.out.println("Name: " + newDonator.getName());
                 System.out.println("Phone: " + newDonator.getPhone());
             }
-   
-        }
+   }
     
  
  public void menuadmin()
 {
-    System.out.println("WELCOME");
-    System.out.println("ADMIN");
-    Admin admin = new Admin("Ilias", "34634673");
+    System.out.println("Your Info:");
+    Admin admin = new Admin("Aegon", "26102210");
     System.out.println("Name: " + admin.getName());
     System.out.println("Phone: " + admin.getPhone());
     System.out.println("IsAdmin: " + admin.getAdmin());
-    System.out.println("------------------------------------");
-    System.out.println("Options:");
-    System.out.println("1.View 2.Monitor Organization 3.Back 4.Logout 5.Exit");
-    System.out.println("Press number to continue");
+    System.out.println("Ηow do you want to continue?);
+    System.out.println("[View(v)/Monitor Organization(mo)/Back(b)/Logout(l)/Exit(e)]");
     
-    Scanner number1 = new Scanner(System.in);
-    Integer usernumber1 = number1.nextInt();
-    int a = usernumber1;
+    Scanner scanAdminChoice = new Scanner(System.in);
+    String scanAdmin_choice = scanAdminChoice.nextLine();
     
-    System.out.println("You pressed:" + usernumber1);
-    boolean exit;
-    switch(a)
+    /*boolean exit;    xreiazete auto????? */
+    switch(scanAdmin_choice)
     {
-    case 1: System.out.println("View:");
-    System.out.println("There are 2 categories:");
-    System.out.println("------1.Material ------ 2.Services------");
+    case 1: System.out.println("You choce View.");
+    System.out.println("Select a category:");
+    System.out.println("1.Material /n2.Services");
     System.out.println("Press 1 for Materials or 2 for Services");
     
-    Scanner number2 = new Scanner(System.in);
-    Integer usernumber2 = number2.nextInt();
-    int d = usernumber2;
+    Scanner category_number = new Scanner(System.in);
+    Integer numberCategory = category_number.nextInt();
     
-    if(usernumber2 == 1)
-    {
-    System.out.println("You chose Materials");
-    System.out.println("These are the materials:");
-    System.out.println("1)milk");
-    System.out.println("2)sugar");
-    System.out.println("3)rice");
-    
-    System.out.println("Press 1 for milk or 2 for sugar or 3 for rice");
+    if(numberCategory == 1)
+     {
+       System.out.println("These are the materials:");
+       System.out.println("1.milk");
+       System.out.println("2.sugar");
+       System.out.println("3.rice");
+       System.out.println("Press 1 for milk or 2 for sugar or 3 for rice");
      
-    Scanner number3 = new Scanner(System.in);
-    Integer usernumber3 = number3.nextInt();
-    int b = usernumber3;
+       Scanner material_number = new Scanner(System.in);
+       Integer materialNumber = material_number.nextInt();
     
-    if(b == 1)
-    {Material milk = new Material("milk","dairy", 1, 1.0, 3.0, 6.0);
-     System.out.println("Milk");
-     System.out.println("Description: " + milk.getDescription());
-     System.out.println("ID: " + milk.getId());
-     System.out.println(milk.getDetails());}
-    else if(b == 2)
-    {Material sugar = new Material("sugar","dried food", 2, 1.0, 3.0, 6.0);
-     System.out.println("Sugar");
-     System.out.println("Description: " + sugar.getDescription());
-     System.out.println("ID: " + sugar.getId());
-     System.out.println(sugar.getDetails());}
-    else if(b == 3)
-    {Material rice = new Material("rice","dried food", 3, 1.0, 3.0, 6.0);
-     System.out.println("Rice");
-     System.out.println("Description: " + rice.getDescription());
-     System.out.println("ID: " + rice.getId());
-     System.out.println(rice.getDetails());}
-    }
-    else if(usernumber2 == 2)
-    {
-     System.out.println("You chose Services");
-     System.out.println("These are the services:");
-     System.out.println("1)MedicalSupport");
-     System.out.println("2)NurserySupport");
-     System.out.println("3)Babysitting");
+       if(materialNumber == 1)
+        {
+           Material milk = new Material("Milk","Long life cow milk. (1.5L)", 1, 2.0, 4.0, 10.0);
+           System.out.println("Milk");
+           System.out.println("Description: " + milk.getDescription());
+           System.out.println("ID: " + milk.getId());
+           System.out.println(milk.getDetails());
+        }
+       else if(materialNumber == 2)
+        {
+          Material sugar = new Material("Sugar","White granulated sugar. (500g)", 2, 1.0, 4.0, 8.0);
+          System.out.println("Sugar");
+          System.out.println("Description: " + sugar.getDescription());
+          System.out.println("ID: " + sugar.getId());
+          System.out.println(sugar.getDetails());
+        }
+       else if(materialNumber == 3)
+        {
+          Material rice = new Material("Rice","Basmati rice. (250g)", 3, 2.0, 4.0, 8.0);
+          System.out.println("Rice");
+          System.out.println("Description: " + rice.getDescription());
+          System.out.println("ID: " + rice.getId());
+          System.out.println(rice.getDetails());
+        }
+     }
+    else if(numberCategory == 2)
+     {
+       System.out.println("These are the materials:");
+       System.out.println("1)MedicalSupport");
+       System.out.println("2)NurserySupport");
+       System.out.println("3)Babysitting");
      
      System.out.println("Press 1 for MedicalSupport or 2 for NurserySupport or 3 for Babysitting");
      
