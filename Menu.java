@@ -71,7 +71,8 @@ public class Menu
                 System.out.println("Name: " + newDonator.getName());
                 System.out.println("Phone: " + newDonator.getPhone());
             }
-   }    
+   }
+    
  
  public void admin_menu()
 {
@@ -171,15 +172,15 @@ public class Menu
     
     case "mo": System.out.println("You choce Monitor Organization:");
     System.out.println("Press one of the following options:");
-    System.out.println("a.List Beneficiaries");
-    System.out.println("b.List Donators");
-    System.out.println("c.Reset Beneficiaries Lists");
-    System.out.println("Press a or b or c.");
+    System.out.println("1.List Beneficiaries");
+    System.out.println("2.List Donators");
+    System.out.println("3.Reset Beneficiaries Lists");
+    System.out.println("Press 1 or 2 or 3.");
     
     Scanner scan_monitor = new Scanner(System.in);
-    String scanMonitor = scan_monitor.nextLine();
+    Integer scanMonitor = scan_monitor.nextInt();
      
-    if(scanMonitor == "a")
+    if(scanMonitor == 1)
     {
      System.out.println("Beneficiaries: ");
      Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210",3);
@@ -273,7 +274,7 @@ public class Menu
      }
  
     }
-    else if(scanMonitor == "b")
+    else if(scanMonitor == 2)
     {
         System.out.println("Donators:");
         Donator donator01 = new Donator("Maegor", "22810221");
@@ -298,7 +299,7 @@ public class Menu
             System.out.println("Donator was not deleted.");
         }    
     }
-    else if(scanMonitor == "c")
+    else if(scanMonitor == 3)
      {
         System.out.println("Reset Beneficiaries Lists");
         Organization organization = new Organization();
@@ -312,19 +313,18 @@ public class Menu
     
     case "b":
     System.out.println("Back:");
+    phone();
     break;
 
     case "l": 
      System.out.println("Υou are disconnected.");
      System.out.println("Do you want to sign in?.");
-     logout("phone");
+     phone();
     break;
     
     case "e": System.out.println("Exit:");
     exit = true;
     break;
-    
-    default: System.out.println("Error");
     
  }
 }
