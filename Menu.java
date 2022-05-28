@@ -89,7 +89,8 @@ public class Menu
     /*boolean exit;    xreiazete auto????? */
     switch(scanAdmin_choice)
     {
-    case 1: System.out.println("You choce View.");
+    case 1: 
+    System.out.println("You choce View.");
     System.out.println("Select a category:");
     System.out.println("1.Material");
     System.out.println("2.Services");
@@ -169,7 +170,8 @@ public class Menu
       } 
     break;
     
-    case 2: System.out.println("You choce Monitor Organization:");
+    case 2: 
+    System.out.println("You choce Monitor Organization:");
     System.out.println("Press one of the following options:");
     System.out.println("a.List Beneficiaries");
     System.out.println("b.List Donators");
@@ -177,90 +179,99 @@ public class Menu
     System.out.println("Press a or b or c.");
     
     Scanner scan_monitor = new Scanner(System.in);
-    Integer scanMonitor = scan_monitor.nextInt();
+    String scanMonitor = scan_monitor.nextLine();
      
-    if(e == 1)
-    {System.out.println("Beneficiaries: ");
-    Beneficiary beneficiary1 = new Beneficiary("Tzilda", "0322230", 3);
-    Beneficiary beneficiary2 = new Beneficiary("Aristea", "0239203", 2);
-    Organization organization = new Organization();
-    organization.listBeneficiaries();
-    System.out.println("1.beneficiary1");
-    System.out.println("2.beneficiary2");
-    System.out.println("Press 1 for beneficiary1 or 2 for beneficiary2");
-    
-    Scanner number6 = new Scanner(System.in);
-    Integer usernumber6 = number6.nextInt();
-    int f = usernumber6;
-    
-    if(f == 1)
+    if(scanMonitor == 1)
     {
-    System.out.println("beneficiary1: ");
-    System.out.println("Name: " + beneficiary1.getName());
-    System.out.println("Phone: " + beneficiary1.getPhone() );
-    System.out.println("Number of family members: " + beneficiary1.getNoPersons() );
-    System.out.println(beneficiary1.getReceivedList());
-    System.out.println("Do you want to delete the receivedList of beneficiary1?");
-    System.out.println("Type 1 for yes or 2 for no");
+     System.out.println("Beneficiaries: ");
+     Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210",3);
+     Beneficiary beneficiary02 = new Beneficiary("Rhaenys", "22340221",2);
+     Organization organization = new Organization();
+     organization.listBeneficiaries();
+     System.out.println("1.beneficiary01");
+     System.out.println("2.beneficiary02");
+     System.out.println("Press 1 or 2.");
     
-    Scanner number7 = new Scanner(System.in);
-    Integer usernumber7 = number7.nextInt();
-    int g = usernumber7;
+    Scanner scan_beneficiary = new Scanner(System.in);
+    Integer scanBeneficiary = scan_beneficiary.nextInt();
     
-    if(g == 1)
+    if(scanBeneficiary == 1)
+     {
+       System.out.println("beneficiary01: ");
+       System.out.println("Name: " + beneficiary01.getName());
+       System.out.println("Phone: " + beneficiary01.getPhone() );
+       System.out.println("Number of family members: " + beneficiary01.getNoPersons() );
+       System.out.println(beneficiary01.getReceivedList());
+       System.out.println("Delete receivedList of beneficiary01?(y/n)");
+    
+       Scanner scan_delete1 = new Scanner(System.in);
+       String scanDelete1 = scan_delete1.nextLine();
+    
+    if(scanDelete1 == "y")
+     {
+       RequestDonationList requestDonationList = new RequestDonationList();
+       requestDonationList.reset();
+       System.out.println("ReceivedList deleted.");
+     }
+    else if (scanDelete1 == "n")
+     {
+      System.out.println("Τhe list was not deleted.");
+     }
+     
+    System.out.println("---------------------------");
+    System.out.println("Delete beneficiary01?(y/n)");
+    
+    Scanner scan_delete2 = new Scanner(System.in);
+    String scanDelete2 = scan_delete2.nextLine();
+    
+    if(scanDelete2 == "y")
     {
-        RequestDonationList rdl = new RequestDonationList();
-        rdl.reset();
+        organization.removeBeneficiary(beneficiary01);
+        System.out.println("Beneficiary01 deleted");
+    }
+    else if(scanDelete2 == "n")
+    {
+     System.out.println("Beneficiary01 was not deleted.");}
+    }
+     
+    if(scanBeneficiary == 2)
+    {
+     System.out.println("beneficiary02: ");
+     System.out.println("Name: " + beneficiary02.getName());
+     System.out.println("Phone: " + beneficiary02.getPhone() );
+     System.out.println("Number of family members: " + beneficiary02.getNoPersons() );
+     System.out.println(beneficiary02.getReceivedList());
+     System.out.println("Delete receivedList of beneficiary01?(y/n)");
+    
+     Scanner scan_delete3 = new Scanner(System.in);
+     String scanDelete3 = scan_delete3.nextLine();
+    
+    if(scanDelete3 == "y")
+     {
+        RequestDonationList requestDonationList = new RequestDonationList();
+        requestDonationList.reset();
         System.out.println("ReceivedList deleted");
-    }
-    else if (g == 2){System.out.println("You didn't delete the list");}
-    System.out.println("Do you want to delete this beneficiary?");
-    System.out.println("Type 1 for yes or 2 for no");
-    
-    Scanner number8 = new Scanner(System.in);
-    Integer usernumber8 = number8.nextInt();
-    int h = usernumber8;
-    
-    if(h == 1)
+     }
+    else if (scanDelete3 == "n")
     {
-        organization.removeBeneficiary(beneficiary1);
-        System.out.println("Beneficiary deleted");
+      System.out.println("Τhe list was not deleted.");
     }
-    else if(h == 2){System.out.println("You didn't delete the beneficiary");}
-    }
-    if(f ==2){System.out.println("beneficiary2: ");
-    System.out.println("Name: " + beneficiary2.getName());
-    System.out.println("Phone: " + beneficiary2.getPhone() );
-    System.out.println("Number of family members: " + beneficiary2.getNoPersons() );
-    System.out.println(beneficiary2.getReceivedList());
-    System.out.println("Do you want to delete the receivedList of beneficiary2?");
-    System.out.println("Type 1 for yes or 2 for no");
+      
+     System.out.println("---------------------------");
+     System.out.println("Delete beneficiary01?(y/n)");
     
-    Scanner number9 = new Scanner(System.in);
-    Integer usernumber9 = number9.nextInt();
-    int i = usernumber9;
+    Scanner scan_delete4 = new Scanner(System.in);
+    String scanDelete4 = scan_delete4.nextLine();
     
-    if(i == 1)
-    {
-        RequestDonationList rdl = new RequestDonationList();
-        rdl.reset();
-        System.out.println("ReceivedList deleted");
-    }
-    else if (i == 2){System.out.println("You didn't delete the list");}
-    System.out.println("Do you want to delete this beneficiary?");
-    System.out.println("Type yes or no");
-    
-    Scanner number10 = new Scanner(System.in);
-    Integer usernumber10 = number10.nextInt();
-    int j = usernumber10;
-    
-    if(j == 1)
+    if(scanDelete4 == "y")
     {
         organization.removeBeneficiary(beneficiary2);
-        System.out.println("Beneficiary deleted");
+        System.out.println("Beneficiary02 deleted");
     }
-    else if(j == 2){System.out.println("You didn't delete the beneficiary");}
-    }
+    else if(scanDelete4 == "n")
+     {
+     System.out.println("Beneficiary02 was not deleted.");}
+     }
     }
     
     else if(e == 2)
