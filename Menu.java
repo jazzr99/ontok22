@@ -225,13 +225,14 @@ public class Menu
     String scanDelete2 = scan_delete2.nextLine();
     
     if(scanDelete2 == "y")
-    {
+     {
         organization.removeBeneficiary(beneficiary01);
         System.out.println("Beneficiary01 deleted");
-    }
+     }
     else if(scanDelete2 == "n")
-    {
-     System.out.println("Beneficiary01 was not deleted.");}
+     {
+     System.out.println("Beneficiary01 was not deleted.");
+     }
     }
      
     if(scanBeneficiary == 2)
@@ -276,45 +277,48 @@ public class Menu
     
     else if(scan_monitor == b)
     {
+        System.out.println("Donators:");
+        Donator donato01 = new Donator("Maegor", "22810221");
         Organization organization =  new Organization();
         organization.listDonators();
-        System.out.println("Donators:");
-        Donator donator = new Donator("Takis", "462456");
         System.out.println("donator");
+     
         donator.getOffersList();
-        System.out.println("Do you want to delete this donator?");
-        System.out.println("Type 1 for yes or 2 for no");
+     
+        System.out.println("Delete donator?(y/n)");
         
-        Scanner number11 = new Scanner(System.in);
-        Integer usernumber11 = number11.nextInt();
-        int k = usernumber11;
+        Scanner scan_delete5 = new Scanner(System.in);
+        String scanDelete5 = scan_delete5.nextLine();
         
-        if(k == 1)
+        if(scanDelete5 == "y")
         {
             organization.removeDonator(donator);
-            System.out.println("You removed the donator");
+            System.out.println("Donator deleted");
         }
-        else if(k == 2)
-        {System.out.println("You didnt remove the donator");}
-        
+        else if(scanDelete5 == "n")
+        {
+            System.out.println("Donator was not deleted.");
+        }    
     }
-    else if(e == 3)
-    {
-        System.out.println("CLEARING ALL RECEIVEDLIST FROM ALL BENEFICIARIES");
+    else if(scan_monitor == c)
+     {
+        System.out.println("Reset Beneficiaries Lists");
         Organization organization = new Organization();
         for(Beneficiary beneficiary:organization.getBeneficiaryList())
         {
             beneficiary.getReceivedList().reset();
         }
-        System.out.println("CLEARED");
+        System.out.println("Τhe action is complete.");
     }
     break;
     
     case 3: System.out.println("Back:");
     break;
     
-    case 4: System.out.println("You are logged out.Do you want to sign up?");
-    logout("phone");
+    case 4: 
+     System.out.println("Υou are disconnected.");
+     System.out.println("Do you want to sign in?.");
+     logout("phone");
     break;
     
     case 5: System.out.println("Exit:");
@@ -323,7 +327,7 @@ public class Menu
     
     default: System.out.println("Error");
     }
-}
+ }
 
 public void logout(String s)
 {
