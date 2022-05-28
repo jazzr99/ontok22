@@ -271,7 +271,6 @@ public class Menu
      {
      System.out.println("Beneficiary02 was not deleted.");}
      }
-    }
     
     else if(scan_monitor == "b")
     {
@@ -326,7 +325,7 @@ public class Menu
     default: System.out.println("Error");
     }
  }
-
+}
 public void logout(String s)
 {
  if(s.equals("phone")){menuadmin();}
