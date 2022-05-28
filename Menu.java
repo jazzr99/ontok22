@@ -92,7 +92,7 @@ public class Menu
     case 1: System.out.println("You choce View.");
     System.out.println("Select a category:");
     System.out.println("1.Material /n2.Services");
-    System.out.println("Press 1 for Materials or 2 for Services");
+    System.out.println("Press 1 for Materials or 2 for Services");   /*edo*/
     
     Scanner category_number = new Scanner(System.in);
     Integer numberCategory = category_number.nextInt();
@@ -103,7 +103,7 @@ public class Menu
        System.out.println("1.milk");
        System.out.println("2.sugar");
        System.out.println("3.rice");
-       System.out.println("Press 1 for milk or 2 for sugar or 3 for rice");
+       System.out.println("Press 1 for milk or 2 for sugar or 3 for rice");  /*edo*/
      
        Scanner material_number = new Scanner(System.in);
        Integer materialNumber = material_number.nextInt();
@@ -135,34 +135,37 @@ public class Menu
      }
     else if(numberCategory == 2)
      {
-       System.out.println("These are the materials:");
-       System.out.println("1)MedicalSupport");
-       System.out.println("2)NurserySupport");
-       System.out.println("3)Babysitting");
+       System.out.println("These are the Services:");
+       System.out.println("1.MedicalSupport");
+       System.out.println("2.NurserySupport");
+       System.out.println("3.Babysitting");
+       System.out.println("Press 1 for MedicalSupport or 2 for NurserySupport or 3 for Babysitting"); /*edo*/
      
-     System.out.println("Press 1 for MedicalSupport or 2 for NurserySupport or 3 for Babysitting");
-     
-    Scanner number4 = new Scanner(System.in);
-    Integer usernumber4 = number4.nextInt();
-    int c = usernumber4;
+       Scanner service_number = new Scanner(System.in);
+       Integer serviceNumber = service_number.nextInt();
     
-    if(c == 1)
-    {Service MedicalSupport = new Service("MedicalSupport","medical care",4);
-     System.out.println("MedicalSupport");
-     System.out.println("Description: " + MedicalSupport.getDescription());
-     System.out.println("ID: " + MedicalSupport.getId());}
-    else if(c == 2)
-    {Service NurserySupport = new Service("NurserySupport","nursery care",5);
-     System.out.println("NurserySupport");
-     System.out.println("Description: " + NurserySupport.getDescription());
-     System.out.println("ID: " + NurserySupport.getId());
-    }
-    else if(c == 3)
-    {Service BabySitting = new Service("BabySitting","baby sitting",6);
-     System.out.println("Babysitting");
-     System.out.println("Description: " + BabySitting.getDescription());
-     System.out.println("ID: " + BabySitting.getId());}
-    } 
+       if(serviceNumber == 1)
+        {
+          Service MedicalSupport = new Service("MedicalSupport","Provided by experts in Famiy Medicine.",4);
+          System.out.println("MedicalSupport");
+          System.out.println("Description: " + MedicalSupport.getDescription());
+          System.out.println("ID: " + MedicalSupport.getId());
+        }
+       else if(c == 2)
+        {
+          Service NurserySupport = new Service("NurserySupport","Provided by certified nursery care givers.",5);
+          System.out.println("NurserySupport");
+          System.out.println("Description: " + NurserySupport.getDescription());
+          System.out.println("ID: " + NurserySupport.getId());
+        }
+       else if(c == 3)
+        {
+          Service BabySitting = new Service("BabySitting","Provided by Primary Education students.",6);
+          System.out.println("Babysitting");
+          System.out.println("Description: " + BabySitting.getDescription());
+          System.out.println("ID: " + BabySitting.getId());
+        }
+      } 
     break;
     
     
