@@ -80,7 +80,7 @@ public class Menu
     System.out.println("Name: " + admin.getName());
     System.out.println("Phone: " + admin.getPhone());
     System.out.println("IsAdmin: " + admin.getAdmin());
-    System.out.println("Ηow do you want to continue?);
+    System.out.println("Ηow do you want to continue?");
     System.out.println("[View(v)/Monitor Organization(mo)/Back(b)/Logout(l)/Exit(e)]");
     
     Scanner scanAdminChoice = new Scanner(System.in);
@@ -89,8 +89,7 @@ public class Menu
     /*boolean exit;    xreiazete auto????? */
     switch(scanAdmin_choice)
     {
-    case 1: 
-    System.out.println("You choce View.");
+    case 1: System.out.println("You choce View.");
     System.out.println("Select a category:");
     System.out.println("1.Material");
     System.out.println("2.Services");
@@ -153,14 +152,14 @@ public class Menu
           System.out.println("Description: " + MedicalSupport.getDescription());
           System.out.println("ID: " + MedicalSupport.getId());
         }
-       else if(c == 2)
+       else if(serviceNumber == 2)
         {
           Service NurserySupport = new Service("NurserySupport","Provided by certified nursery care givers.",5);
           System.out.println("NurserySupport");
           System.out.println("Description: " + NurserySupport.getDescription());
           System.out.println("ID: " + NurserySupport.getId());
         }
-       else if(c == 3)
+       else if(serviceNumber == 3)
         {
           Service BabySitting = new Service("BabySitting","Provided by Primary Education students.",6);
           System.out.println("Babysitting");
@@ -170,8 +169,7 @@ public class Menu
       } 
     break;
     
-    case 2: 
-    System.out.println("You choce Monitor Organization:");
+    case 2: System.out.println("You choce Monitor Organization:");
     System.out.println("Press one of the following options:");
     System.out.println("a.List Beneficiaries");
     System.out.println("b.List Donators");
@@ -181,7 +179,7 @@ public class Menu
     Scanner scan_monitor = new Scanner(System.in);
     String scanMonitor = scan_monitor.nextLine();
      
-    if(scanMonitor == a)
+    if(scanMonitor == "a")
     {
      System.out.println("Beneficiaries: ");
      Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210",3);
@@ -266,7 +264,7 @@ public class Menu
     
     if(scanDelete4 == "y")
     {
-        organization.removeBeneficiary(beneficiary2);
+        organization.removeBeneficiary(beneficiary02);
         System.out.println("Beneficiary02 deleted");
     }
     else if(scanDelete4 == "n")
@@ -275,7 +273,7 @@ public class Menu
      }
     }
     
-    else if(scan_monitor == b)
+    else if(scan_monitor == "b")
     {
         System.out.println("Donators:");
         Donator donato01 = new Donator("Maegor", "22810221");
@@ -283,7 +281,7 @@ public class Menu
         organization.listDonators();
         System.out.println("donator");
      
-        donator.getOffersList();
+        donator01.getOffersList();
      
         System.out.println("Delete donator?(y/n)");
         
