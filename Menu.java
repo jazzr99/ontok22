@@ -328,15 +328,6 @@ public class Menu
     
  }
 }
-
-boolean exit2;
-    int Choice;
-    int Choice2;
-    int Choice3;
-    int Choice4;
-    int Choice5;
-    int Choice6;
-    int Choice7;
     
     public void runMenu(){
         while(!exit){
