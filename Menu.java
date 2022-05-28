@@ -322,16 +322,11 @@ public class Menu
      phone();
     break;
     
-    case "e": System.out.println("Exit:");
+    case "e": System.out.println("Exit");
     exit = true;
     break;
     
  }
-}
-public void logout(String s)
-{
- if(s.equals("phone")){admin_menu();}
- else {System.out.println("");}
 }
 
 boolean exit2;
