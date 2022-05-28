@@ -181,7 +181,7 @@ public class Menu
     Scanner scan_monitor = new Scanner(System.in);
     String scanMonitor = scan_monitor.nextLine();
      
-    if(scanMonitor == 1)
+    if(scanMonitor == a)
     {
      System.out.println("Beneficiaries: ");
      Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210",3);
@@ -274,7 +274,7 @@ public class Menu
      }
     }
     
-    else if(e == 2)
+    else if(scan_monitor == b)
     {
         Organization organization =  new Organization();
         organization.listDonators();
