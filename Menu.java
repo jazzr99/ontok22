@@ -328,7 +328,7 @@ public class Menu
     
  }
 }
-    
+   /* 
     public void runMenu(){
         while(!exit){
             category();
@@ -356,14 +356,14 @@ public class Menu
             ModifyRd2(Choice6);
             int Choice7 = getInput17();
             resetall2(Choice7);
-
-
         }
     }
-    
-    public void category(){
-        System.out.println("------------------");
-        System.out.println("WELCOME BENEFICIARY");
+    */
+ 
+ 
+ 
+ 
+    public void beneficiary_menu(){
         System.out.println("Add Request ");
         System.out.println("choose one category:");
         System.out.println("1. Materials");
