@@ -10,7 +10,7 @@ public class Menu
   {
       Menu menu = new Menu();
       
-      System.out.println("Welcome!/nDo you have an existing account? (yes/no)");
+      System.out.println("Welcome!\nDo you have an existing account? (yes/no)");
        
       Scanner scanner1 = new Scanner(System.in);
       String scanner_1 = scanner1.nextLine();
@@ -34,19 +34,19 @@ public class Menu
     
         if(scan_number==26102210)
         {System.out.println("Hello Aegon");
-          menu.menuadmin();
+         admin_menu();
         }
         else if(scan_number==2102210)
         {System.out.println("Hello Visenya");
-          menu.beneficiary();
+         beneficiary();
         } 
         else if(scan_number==22340221)
         {System.out.println("Hello Rhaenys");
-          menu.beneficiary();
+         beneficiary();
         }
         else if(scan_number==22810221)
         {System.out.println("Hello Maegor");
-          menu.donator();
+         donator();
         } 
     }
  
@@ -73,7 +73,7 @@ public class Menu
    }
     
  
- public void menuadmin()
+ public void admin_menu()
 {
     System.out.println("Your Info:");
     Admin admin = new Admin("Aegon", "26102210");
@@ -273,15 +273,15 @@ public class Menu
      }
  
     }
-    else if(scan_monitor == "b")
+    else if(scanMonitor == "b")
     {
         System.out.println("Donators:");
-        Donator donato01 = new Donator("Maegor", "22810221");
+        Donator donator01 = new Donator("Maegor", "22810221");
         Organization organization =  new Organization();
         organization.listDonators();
         System.out.println("donator");
      
-        donato01.getOffersList();
+        donator01.getOffersList();
      
         System.out.println("Delete donator?(y/n)");
         
@@ -290,7 +290,7 @@ public class Menu
         
         if(scanDelete5 == "y")
         {
-            organization.removeDonator(donato01);
+            organization.removeDonator(donator01);
             System.out.println("Donator deleted");
         }
         else if(scanDelete5 == "n")
@@ -298,7 +298,7 @@ public class Menu
             System.out.println("Donator was not deleted.");
         }    
     }
-    else if(scan_monitor == "c")
+    else if(scanMonitor == "c")
      {
         System.out.println("Reset Beneficiaries Lists");
         Organization organization = new Organization();
@@ -330,7 +330,7 @@ public class Menu
 }
 public void logout(String s)
 {
- if(s.equals("phone")){menuadmin();}
+ if(s.equals("phone")){admin_menu();}
  else {System.out.println("");}
 }
 
