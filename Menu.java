@@ -2,20 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.io.*;
+import javafx.scene.layout.Pane;
 
 
 public class Menu
-{
+{ 
  public static void main(String[] args)
   {
       Menu menu = new Menu();
       
-      System.out.println("Welcome!\nDo you have an existing account? (yes/no)");
-       
-      Scanner scanner1 = new Scanner(System.in);
-      String scanner_1 = scanner1.nextLine();
-  
-      if(scanner_1=="yes")
+      System.out.println("Welcome!\nDo you have an existing account? (1=yes / 2=no)");
+      
+        Scanner scanner1 = new Scanner(System.in);
+        Integer scanner_1 = scanner1.nextInt();  
+
+      if(scanner_1 == 1)
        {
        menu.phone();
        }
@@ -38,40 +39,39 @@ public class Menu
         }
         else if(scan_number==2102210)
         {System.out.println("Hello Visenya");
-         beneficiary();
+         //beneficiary();
         } 
         else if(scan_number==22340221)
         {System.out.println("Hello Rhaenys");
-         beneficiary();
+         //beneficiary();
         }
         else if(scan_number==22810221)
         {System.out.println("Hello Maegor");
-         donator();
+         //donator();
         } 
     }
  
  public void signing_up()
   {
-            System.out.println("Would you like to become donator or beneficiary? (b/d)");
+            System.out.println("Would you like to become donator or beneficiary? (1=beneficiary /2=donator)");
             
             Scanner scanChoice = new Scanner(System.in);
-            String scan_choice = scanChoice.nextLine();
-            
-            if(scan_choice == "b")
+            Integer scan_choice = scanChoice.nextInt();
+
+            if(scan_choice == 1)
             {
-                Beneficiary newBeneficiary = new Beneficiary("NewBeneficiary","s",1);
+                Beneficiary newBeneficiary = new Beneficiary("NewBeneficiary","Number",1);
                 System.out.println("Name: " + newBeneficiary.getName());
                 System.out.println("Phone: " + newBeneficiary.getPhone());
                 System.out.println("NoPersons: " + newBeneficiary.getNoPersons());
             }             
-            else if(scan_choice == "d")
+            else if(scan_choice == 2)
             {
-                Donator newDonator = new Donator("NewDonator","s");
+                Donator newDonator = new Donator("NewDonator","Number");
                 System.out.println("Name: " + newDonator.getName());
                 System.out.println("Phone: " + newDonator.getPhone());
             }
-   }
-    
+   }    
  
  public void admin_menu()
 {
