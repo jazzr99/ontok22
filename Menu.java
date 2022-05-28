@@ -86,7 +86,7 @@ public class Menu
     Scanner scanAdminChoice = new Scanner(System.in);
     String scanAdmin_choice = scanAdminChoice.nextLine();
     
-    boolean exit;
+    Boolean exit;
     switch(scanAdmin_choice)
     {
     case "v": System.out.println("You choce View.");
@@ -271,7 +271,8 @@ public class Menu
      {
      System.out.println("Beneficiary02 was not deleted.");}
      }
-    
+ 
+    }
     else if(scan_monitor == "b")
     {
         System.out.println("Donators:");
@@ -280,7 +281,7 @@ public class Menu
         organization.listDonators();
         System.out.println("donator");
      
-        donator01.getOffersList();
+        donato01.getOffersList();
      
         System.out.println("Delete donator?(y/n)");
         
@@ -289,7 +290,7 @@ public class Menu
         
         if(scanDelete5 == "y")
         {
-            organization.removeDonator(donator);
+            organization.removeDonator(donato01);
             System.out.println("Donator deleted");
         }
         else if(scanDelete5 == "n")
@@ -297,7 +298,7 @@ public class Menu
             System.out.println("Donator was not deleted.");
         }    
     }
-    else if(scan_monitor == c)
+    else if(scan_monitor == "c")
      {
         System.out.println("Reset Beneficiaries Lists");
         Organization organization = new Organization();
@@ -309,9 +310,10 @@ public class Menu
     }
     break;
     
-    case "b": System.out.println("Back:");
+    case "b":
+    System.out.println("Back:");
     break;
-    
+
     case "l": 
      System.out.println("Υou are disconnected.");
      System.out.println("Do you want to sign in?.");
@@ -323,7 +325,7 @@ public class Menu
     break;
     
     default: System.out.println("Error");
-    }
+    
  }
 }
 public void logout(String s)
