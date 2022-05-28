@@ -91,8 +91,9 @@ public class Menu
     {
     case 1: System.out.println("You choce View.");
     System.out.println("Select a category:");
-    System.out.println("1.Material /n2.Services");
-    System.out.println("Press 1 for Materials or 2 for Services");   /*edo*/
+    System.out.println("1.Material");
+    System.out.println("2.Services");
+    System.out.println("Press 1 or 2.");
     
     Scanner category_number = new Scanner(System.in);
     Integer numberCategory = category_number.nextInt();
@@ -103,7 +104,7 @@ public class Menu
        System.out.println("1.milk");
        System.out.println("2.sugar");
        System.out.println("3.rice");
-       System.out.println("Press 1 for milk or 2 for sugar or 3 for rice");  /*edo*/
+       System.out.println("Press 1 or 2 or 3.");
      
        Scanner material_number = new Scanner(System.in);
        Integer materialNumber = material_number.nextInt();
@@ -139,7 +140,7 @@ public class Menu
        System.out.println("1.MedicalSupport");
        System.out.println("2.NurserySupport");
        System.out.println("3.Babysitting");
-       System.out.println("Press 1 for MedicalSupport or 2 for NurserySupport or 3 for Babysitting"); /*edo*/
+       System.out.println("Press 1 or 2 or 3.");
      
        Scanner service_number = new Scanner(System.in);
        Integer serviceNumber = service_number.nextInt();
@@ -168,17 +169,15 @@ public class Menu
       } 
     break;
     
+    case 2: System.out.println("You choce Monitor Organization:");
+    System.out.println("Press one of the following options:");
+    System.out.println("a.List Beneficiaries");
+    System.out.println("b.List Donators");
+    System.out.println("c.Reset Beneficiaries Lists");
+    System.out.println("Press a or b or c.");
     
-    case 2: System.out.println("Monitor Organization:");
-    System.out.println("Options:");
-    System.out.println("a.List Beneficiaries b.List Donators c.Reset Beneficiaries Lists");
-    System.out.println("Press 1 to see the list of Beneficiaries");
-    System.out.println("or press 2 to see the list of donators");
-    System.out.println("or press 3 to reset beneficiaries' list.");
-    
-    Scanner number5 = new Scanner(System.in);
-    Integer usernumber5 = number5.nextInt();
-    int e = usernumber5;
+    Scanner scan_monitor = new Scanner(System.in);
+    Integer scanMonitor = scan_monitor.nextInt();
      
     if(e == 1)
     {System.out.println("Beneficiaries: ");
