@@ -328,7 +328,6 @@ public class Menu
     
  }
 }
-   /* 
     public void runMenu(){
         while(!exit){
             category();
@@ -358,11 +357,8 @@ public class Menu
             resetall2(Choice7);
         }
     }
-    */
- 
- 
- 
-   public void beneficiary_menu(){
+   
+    public void beneficiary_menu(){
         System.out.println("Choose one option to continue:");
         System.out.println("1.Add Request");
         System.out.println("2.Show Requests");
@@ -377,10 +373,139 @@ public class Menu
     
         switch(ben_Choice)
         {
-            case 1 : System.out.println("");
+            case 1 : System.out.println("1.Material or 2.Services");
+            System.out.println("Choose 1 or 2.");
+            
+        Scanner categoryChoice = new Scanner(System.in);
+        int category_Choice  = categoryChoice.nextInt();
+        
+        if (category_Choice == 1)
+        {
+            System.out.println("1.Milk");
+            System.out.println("2.Sugar");
+            System.out.println("3.Rice");
+            System.out.println("Choose 1 or 2 or 3.");
+            
+            Scanner materialChoice = new Scanner(System.in);
+            int material_Choice  = materialChoice.nextInt();
+            
+            if(material_Choice == 1)
+            {
+                Material milk = new Material("Milk","Long life cow milk. (1.5L)", 1, 2.0, 4.0, 10.0);
+                System.out.println("Milk:");
+                System.out.println(milk.getDetails());
+                System.out.println("Please enter quantity.");
+                System.out.println("1. 2L or 2. 4L or 3. 10L");
+                Scanner milkChoose = new Scanner(System.in);
+                Integer milk_Choose = milkChoose.nextInt();
+                if(milk_Choose == 1)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation milkRequest = new RequestDonation(milk,1);
+                requestofbeneficiary01.add(milkRequest,entityList);
+                }
+                else if(milk_Choose == 2)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation milkRequest = new RequestDonation(milk,2);
+                requestofbeneficiary01.add(milkRequest,entityList);
+                }
+                else if(milk_Choose == 3)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation milkRequest = new RequestDonation(milk,3);
+                requestofbeneficiary01.add(milkRequest,entityList);
+                }    
+            }
+            else if(material_Choice == 2)
+            {
+                Material sugar = new Material("Sugar","White granulated sugar. (500g)", 2, 1.0, 4.0, 8.0);
+                System.out.println("Sugar:");
+                System.out.println(sugar.getDetails());
+                System.out.println("Please enter quantity.");
+                System.out.println("1. 1Kg or 2. 4KG or 3. 8Kg");
+                Scanner sugarChoose = new Scanner(System.in);
+                Integer sugar_Choose = sugarChoose.nextInt();
+                if(sugar_Choose == 1)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation sugarRequest = new RequestDonation(sugar,1);
+                requestofbeneficiary01.add(sugarRequest,entityList);
+                }
+                else if(sugar_Choose == 2)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation sugarRequest = new RequestDonation(sugar,2);
+                requestofbeneficiary01.add(sugarRequest,entityList);
+                }
+                else if(sugar_Choose == 3)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation sugarRequest = new RequestDonation(sugar,3);
+                requestofbeneficiary01.add(sugarRequest,entityList);
+                }    
+            }
+            else if(material_Choice == 3)
+            {
+                Material rice = new Material("Rice","Basmati rice. (250g)", 3, 2.0, 4.0, 8.0);
+                System.out.println("Rice:");
+                System.out.println(rice.getDetails());
+                System.out.println("Please enter quantity.");
+                System.out.println("1. 2Kg or 2. 4KG or 3. 8Kg");
+                Scanner riceChoose = new Scanner(System.in);
+                Integer rice_Choose = riceChoose.nextInt();
+                if(rice_Choose == 1)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation riceRequest = new RequestDonation(rice,1);
+                requestofbeneficiary01.add(riceRequest,entityList);
+                }
+                else if(rice_Choose == 2)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation riceRequest = new RequestDonation(rice,2);
+                requestofbeneficiary01.add(riceRequest,entityList);
+                }
+                else if(rice_Choose == 3)
+                {
+                List<Entity> entityList = new ArrayList<>(); 
+                Requests requestofbeneficiary01 = new Requests();
+                RequestDonation riceRequest = new RequestDonation(rice,3);
+                requestofbeneficiary01.add(riceRequest,entityList);
+                }    
+            }
         }
-    }
- 
+        else if(category_Choice== 2)
+        {
+            System.out.println("1.MedicalSupprt");
+            System.out.println("2.NurserySupport");
+            System.out.println("3.BabySitting");
+            System.out.println("Choose 1 or 2 or 3.");
+            
+            Scanner serviceChoice = new Scanner(System.in);
+            int service_Choice  = serviceChoice.nextInt();
+            
+            if(service_Choice == 1)
+            {
+                Service MedicalSupport = new Service("MedicalSupport","Provided by experts in Famiy Medicine.",4);
+                System.out.println("MedicalSupport");
+                System.out.println(MedicalSupport.getDetails());
+                List<Entity> entityList = new ArrayList<>();   
+                Requests requestofbeneficiary4 = new Requests();
+                RequestDonation medicalSupportRequest = new RequestDonation(MedicalSupport,1);
+                requestofbeneficiary4.add(medicalSupportRequest,entityList);}
+            }
+        }
+        }
+    
     
     private int getInput(){
         Scanner kb = new Scanner(System.in);
