@@ -241,7 +241,7 @@ public class Menu
      System.out.println("Phone: " + beneficiary02.getPhone() );
      System.out.println("Number of family members: " + beneficiary02.getNoPersons() );
      System.out.println(beneficiary02.getReceivedList());
-     System.out.println("Delete receivedList of beneficiary01?(y/n)");
+     System.out.println("Delete receivedList of beneficiary02?(y/n)");
     
      Scanner scan_delete3 = new Scanner(System.in);
      String scanDelete3 = scan_delete3.nextLine();
@@ -328,7 +328,8 @@ public class Menu
     
  }
 }
-   /* public void runMenu(){
+/*
+    public void runMenu(){
         while(!exit){
             category();
             int Choice = getInput();
@@ -401,23 +402,23 @@ public class Menu
                 if(milk_Choose == 1)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request1ofbeneficiary = new Requests();
                 RequestDonation milkRequest = new RequestDonation(milk,1);
-                requestofbeneficiary01.add(milkRequest,entityList);
+                request1ofbeneficiary.add(milkRequest,entityList);
                 }
                 else if(milk_Choose == 2)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request2ofbeneficiary = new Requests();
                 RequestDonation milkRequest = new RequestDonation(milk,2);
-                requestofbeneficiary01.add(milkRequest,entityList);
+                request2ofbeneficiary.add(milkRequest,entityList);
                 }
                 else if(milk_Choose == 3)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request3ofbeneficiary = new Requests();
                 RequestDonation milkRequest = new RequestDonation(milk,3);
-                requestofbeneficiary01.add(milkRequest,entityList);
+                request3ofbeneficiary.add(milkRequest,entityList);
                 }    
             }
             else if(material_Choice == 2)
@@ -432,23 +433,23 @@ public class Menu
                 if(sugar_Choose == 1)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request4ofbeneficiary = new Requests();
                 RequestDonation sugarRequest = new RequestDonation(sugar,1);
-                requestofbeneficiary01.add(sugarRequest,entityList);
+                request4ofbeneficiary.add(sugarRequest,entityList);
                 }
                 else if(sugar_Choose == 2)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request5ofbeneficiary = new Requests();
                 RequestDonation sugarRequest = new RequestDonation(sugar,2);
-                requestofbeneficiary01.add(sugarRequest,entityList);
+                request5ofbeneficiary.add(sugarRequest,entityList);
                 }
                 else if(sugar_Choose == 3)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request6ofbeneficiary = new Requests();
                 RequestDonation sugarRequest = new RequestDonation(sugar,3);
-                requestofbeneficiary01.add(sugarRequest,entityList);
+                request6ofbeneficiary.add(sugarRequest,entityList);
                 }    
             }
             else if(material_Choice == 3)
@@ -463,23 +464,23 @@ public class Menu
                 if(rice_Choose == 1)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests request1ofbeneficiary = new Requests();
+                Requests request7ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,1);
-                request1ofbeneficiary.add(riceRequest,entityList);             
+                request7ofbeneficiary.add(riceRequest,entityList);
                 }
                 else if(rice_Choose == 2)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests request2ofbeneficiary = new Requests();
+                Requests request8ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,2);
-                request2ofbeneficiary.add(riceRequest,entityList);
+                request8ofbeneficiary.add(riceRequest,entityList);
                 }
                 else if(rice_Choose == 3)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests request3ofbeneficiary = new Requests();
+                Requests request9ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,3);
-                request3ofbeneficiary.add(riceRequest,entityList);
+                request9ofbeneficiary.add(riceRequest,entityList);
                 }    
             }
         }
@@ -499,38 +500,34 @@ public class Menu
                 System.out.println("MedicalSupport");
                 System.out.println(MedicalSupport.getDetails());
                 List<Entity> entityList = new ArrayList<>();   
-                Requests request4ofbeneficiary = new Requests();
+                Requests request10ofbeneficiary = new Requests();
                 RequestDonation medicalSupportRequest = new RequestDonation(MedicalSupport,4);
-                request4ofbeneficiary.add(medicalSupportRequest,entityList);
-                
+                request10ofbeneficiary.add(medicalSupportRequest,entityList);
             }
             else if(service_Choice == 2)
             {
-                Service MedicalSupport = new Service("NurserySupport","Provided by certified nursery care givers.",5);
+                Service NurserySupport = new Service("NurserySupport","Provided by certified nursery care givers.",5);
                 System.out.println("NurserySupport");
-                System.out.println(MedicalSupport.getDetails());
+                System.out.println(NurserySupport.getDetails());
                 List<Entity> entityList = new ArrayList<>();   
-                Requests request5ofbeneficiary = new Requests();
-                RequestDonation nurserySupportRequest = new RequestDonation(NurserySupport,5);
-                request5ofbeneficiary.add(nurserySupportRequest,entityList);}
+                Requests request11ofbeneficiary = new Requests();
+                RequestDonation NurserySupportRequest = new RequestDonation(NurserySupport,5);
+                request11ofbeneficiary.add(NurserySupportRequest,entityList);
             }
-            else if(service_Choice == 3)
+            else if(service_Choice == 2)
             {
-                Service MedicalSupport = new Service("BabySitting","Provided by Primary Education students.",6);
+                Service BabySitting = new Service("BabySitting","Provided by Primary Education students.",6);
                 System.out.println("BabySitting");
                 System.out.println(BabySitting.getDetails());
                 List<Entity> entityList = new ArrayList<>();   
-                Requests request6ofbeneficiary = new Requests();
-                RequestDonation BabySittingRequest = new RequestDonation(BabySitting,5);
-                request6ofbeneficiary.add(BabySittingRequest,entityList);
+                Requests request12ofbeneficiary = new Requests();
+                RequestDonation BabySittingRequest = new RequestDonation(BabySitting,6);
+                request12ofbeneficiary.add(BabySittingRequest,entityList);
             }
-        
-        
+            }
         }
-    }
-        
-    
-    
+        }
+   
     private int getInput(){
         Scanner kb = new Scanner(System.in);
         int Choice = -1;
