@@ -328,7 +328,7 @@ public class Menu
     
  }
 }
-    public void runMenu(){
+   /* public void runMenu(){
         while(!exit){
             category();
             int Choice = getInput();
@@ -357,7 +357,7 @@ public class Menu
             resetall2(Choice7);
         }
     }
-   
+   */
     public void beneficiary_menu(){
         System.out.println("Choose one option to continue:");
         System.out.println("1.Add Request");
@@ -463,23 +463,23 @@ public class Menu
                 if(rice_Choose == 1)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request1ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,1);
-                requestofbeneficiary01.add(riceRequest,entityList);
+                request1ofbeneficiary.add(riceRequest,entityList);             
                 }
                 else if(rice_Choose == 2)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request2ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,2);
-                requestofbeneficiary01.add(riceRequest,entityList);
+                request2ofbeneficiary.add(riceRequest,entityList);
                 }
                 else if(rice_Choose == 3)
                 {
                 List<Entity> entityList = new ArrayList<>(); 
-                Requests requestofbeneficiary01 = new Requests();
+                Requests request3ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,3);
-                requestofbeneficiary01.add(riceRequest,entityList);
+                request3ofbeneficiary.add(riceRequest,entityList);
                 }    
             }
         }
@@ -499,12 +499,36 @@ public class Menu
                 System.out.println("MedicalSupport");
                 System.out.println(MedicalSupport.getDetails());
                 List<Entity> entityList = new ArrayList<>();   
-                Requests requestofbeneficiary4 = new Requests();
-                RequestDonation medicalSupportRequest = new RequestDonation(MedicalSupport,1);
-                requestofbeneficiary4.add(medicalSupportRequest,entityList);}
+                Requests request4ofbeneficiary = new Requests();
+                RequestDonation medicalSupportRequest = new RequestDonation(MedicalSupport,4);
+                request4ofbeneficiary.add(medicalSupportRequest,entityList);
+                
             }
+            else if(service_Choice == 2)
+            {
+                Service MedicalSupport = new Service("NurserySupport","Provided by certified nursery care givers.",5);
+                System.out.println("NurserySupport");
+                System.out.println(MedicalSupport.getDetails());
+                List<Entity> entityList = new ArrayList<>();   
+                Requests request5ofbeneficiary = new Requests();
+                RequestDonation nurserySupportRequest = new RequestDonation(NurserySupport,5);
+                request5ofbeneficiary.add(nurserySupportRequest,entityList);}
+            }
+            else if(service_Choice == 3)
+            {
+                Service MedicalSupport = new Service("BabySitting","Provided by Primary Education students.",6);
+                System.out.println("BabySitting");
+                System.out.println(BabySitting.getDetails());
+                List<Entity> entityList = new ArrayList<>();   
+                Requests request6ofbeneficiary = new Requests();
+                RequestDonation BabySittingRequest = new RequestDonation(BabySitting,5);
+                request6ofbeneficiary.add(BabySittingRequest,entityList);
+            }
+        
+        
         }
-        }
+    }
+        
     
     
     private int getInput(){
@@ -860,7 +884,8 @@ public class Menu
     
     public void returnToBack(String string)
     {if(string.equals("category"))
-    {runMenu();}   
+    //  {runMenu();}   
+    System.out.print("Enter your choice(Delete all or don't delete all): ");    
     else{int Choice7 = getInput2(); materialsList(Choice7);
     }
 
@@ -915,7 +940,8 @@ public class Menu
     
     public void returnToBack2(String string){
         if(string.equals("category")){
-            runMenu();        
+            //runMenu();        
+            System.out.print("Enter your choice(Delete all or don't delete all): ");    
         }
         else{
         int choice7 = getInput2();
