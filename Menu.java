@@ -362,15 +362,25 @@ public class Menu
  
  
  
- 
-    public void beneficiary_menu(){
-        System.out.println("Add Request ");
-        System.out.println("choose one category:");
-        System.out.println("1. Materials");
-        System.out.println("2. Services");
-        System.out.println("0. Exit");
-        System.out.println("3.Log out");
+   public void beneficiary_menu(){
+        System.out.println("Choose one option to continue:");
+        System.out.println("1.Add Request");
+        System.out.println("2.Show Requests");
+        System.out.println("3.Commit");
+        System.out.println("4.Back");
+        System.out.println("5.Logout");
+        System.out.println("6.Exit");
+        System.out.println("Choose 1 or 2 or 3 or 4 or 5 or 6");
+        
+        Scanner benChoice = new Scanner(System.in);
+        int ben_Choice  = benChoice.nextInt();
+    
+        switch(ben_Choice)
+        {
+            case 1 : System.out.println("");
+        }
     }
+ 
     
     private int getInput(){
         Scanner kb = new Scanner(System.in);
