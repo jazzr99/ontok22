@@ -99,7 +99,7 @@ public class Organization {
     
     
     
-    //GET - SET ENCAPSULATION
+    // GETTERS-SETTERS
     public Admin getAdmin() {
         return admin;
     }
