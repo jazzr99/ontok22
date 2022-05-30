@@ -382,7 +382,7 @@ boolean exit;
                     donatorOffers.add(requestDonation01,entityList);
                 }
                 else {
-                 phone();   
+                 break;   
                 }
                     return;
             }
