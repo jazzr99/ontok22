@@ -26,6 +26,7 @@ boolean exit;
       }
    }
  
+ //Checking if User already exists.
  public void phone()
     {
         System.out.println("Please enter your phone number:");
