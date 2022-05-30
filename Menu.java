@@ -711,7 +711,7 @@ boolean exit;
         
         Organization organization =  new Organization();
         System.out.println("Beneficiary's 01 Requests:");
-        System.out.println(organization.getCurrentDonations());
+        System.out.println(beneficiary01.getReceivedList());
         
         System.out.println("Beneficiary's 02 Requests:");
         System.out.println(beneficiary02.getReceivedList()); 
