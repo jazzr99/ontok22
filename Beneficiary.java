@@ -11,6 +11,7 @@ public class Beneficiary extends User{
         super(name, phone);
         this.noPersons=noPersons;
     }
+    // GETTERS-SETTERS 
     public int getNoPersons(){
         return noPersons;
     }
