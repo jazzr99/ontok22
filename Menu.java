@@ -6,10 +6,10 @@ import java.io.*;
 
 public class Menu
 { 
+boolean exit;
  public static void main(String[] args)
   {
-  boolean exit ;   
-  Menu menu = new Menu();
+      Menu menu = new Menu();
       
       System.out.println("Welcome!\nDo you have an existing account? (1=yes / 2=no)");
       
@@ -47,13 +47,13 @@ public class Menu
         }
         else if(scan_number==22810221)
         {System.out.println("Hello Maegor");
-         //donator();
+             donator_menu();
         }
     }
  
  public void signing_up()
   {
-            System.out.println("Would you like to become donator or beneficiary? (1=beneficiary /2=donator)");
+            System.out.println("Would you like to become Beneficiary or Donator? (1=beneficiary /2=donator)");
             
             Scanner scanChoice = new Scanner(System.in);
             Integer scan_choice = scanChoice.nextInt();
@@ -64,16 +64,21 @@ public class Menu
                 System.out.println("Name: " + newBeneficiary.getName());
                 System.out.println("Phone: " + newBeneficiary.getPhone());
                 System.out.println("NoPersons: " + newBeneficiary.getNoPersons());
+                System.out.println("-----------------------------");
+                
+                beneficiary_menu();
             }             
             else if(scan_choice == 2)
             {
                 Donator newDonator = new Donator("NewDonator","Number");
                 System.out.println("Name: " + newDonator.getName());
                 System.out.println("Phone: " + newDonator.getPhone());
+                System.out.println("-----------------------------");
+                
+                donator_menu();
             }
    }
-    
- 
+
  public void admin_menu()
 {
     System.out.println("Your Info:");
@@ -328,46 +333,210 @@ public class Menu
     
  }
 }
-/*
-    public void runMenu(){
-        while(!exit){
-            category();
-            int Choice = getInput();
-            performAction(Choice);
+
+    public void donator_menu()
+    {
+        System.out.println("Choose one option to continue:");
+        System.out.println("1.Add Offers");
+        System.out.println("2.Show Offers");
+        System.out.println("3.Back");
+        System.out.println("4.Logout");
+        System.out.println("5.Exit");
+        System.out.println("Choose 1 or 2 or 3 or 4 or 5");
+              
+        Scanner donChoice = new Scanner(System.in);
+        int don_Choice  = donChoice.nextInt();
+    
+        switch(don_Choice)
+        {
+        case 1 : System.out.println("Choose 1 or 2.");
+        System.out.println("1.Material or 2.Services");
             
-            if(Choice == 1){
-                int Choice2 = getInput2();
-                materialsList(Choice2);
-            }
+        Scanner categoryChoice1 = new Scanner(System.in);
+        int category_Choice1  = categoryChoice1.nextInt();
+        
+        if(category_Choice1 == 1)
+        {
+            Material milk = new Material("Milk","Long life cow milk. (1.5L)", 1, 2.0, 4.0, 10.0);
+            Material sugar = new Material("Sugar","White granulated sugar. (500g)", 2, 1.0, 4.0, 8.0);
+            Material rice = new Material("Rice","Basmati rice. (250g)", 3, 2.0, 4.0, 8.0);
+                
+            System.out.println("Choose 1 or 2 or 3.");
+            System.out.println("1.Milk");
+            System.out.println("2.Sugar");
+            System.out.println("3.Rice");
             
-            else if(Choice == 2){
-                int Choice3 = getInput3();
-                servicesList(Choice3);
+            Scanner materialChoice = new Scanner(System.in);
+            int material_Choice  = materialChoice.nextInt();
+            
+            if(material_Choice == 1)
+            {  
+                System.out.println("Milk:");
+                System.out.println(milk.getDetails());
+                
+                System.out.println("Would you like to donate milk? (y/n)");
+                Scanner scanner_1 = new Scanner(System.in);
+                String Scanner_1 = scanner_1.nextLine();
+                if(Scanner_1 == "y"){
+                    List<Entity> entityList = new ArrayList<>();
+                    RequestDonation requestDonation01 = new RequestDonation(milk,1);
+                    Offers donatorOffers = new Offers();
+                    donatorOffers.add(requestDonation01,entityList);
+                }
+                else {
+                 phone();   
+                }
+                    return;
             }
-            else if(Choice == 0){exit = true;}
-            else if(Choice == 3){exit = true;}
-                        
-            requests();
-            int Choice4 = getInput4();
-            performAction2(Choice4);
-            int Choice5 = getInput5();
-            deleteRd2(Choice5);
-            int Choice6 = getInput16();
-            ModifyRd2(Choice6);
-            int Choice7 = getInput17();
-            resetall2(Choice7);
+            else if(material_Choice == 2)
+            {  
+                System.out.println("Sugar:");
+                System.out.println(sugar.getDetails());
+                
+                System.out.println("Would you like to donate Sugar? (y/n)");
+                Scanner scanner_2 = new Scanner(System.in);
+                String Scanner_2 = scanner_2.nextLine();
+                if(Scanner_2 == "y"){
+                    List<Entity> entityList = new ArrayList<>();
+                    RequestDonation requestDonation02 = new RequestDonation(sugar,2);
+                    Offers donatorOffers = new Offers();
+                    donatorOffers.add(requestDonation02,entityList);
+                }
+                else {
+                 phone();   
+                }
+                    return;
+            }
+            else if(material_Choice == 2)
+            {  
+                System.out.println("Rice:");
+                System.out.println(rice.getDetails());
+                
+                System.out.println("Would you like to donate rice? (y/n)");
+                Scanner scanner_3 = new Scanner(System.in);
+                String Scanner_3 = scanner_3.nextLine();
+                if(Scanner_3 == "y"){
+                    List<Entity> entityList = new ArrayList<>();
+                    RequestDonation requestDonation03 = new RequestDonation(rice,3);
+                    Offers donatorOffers = new Offers();
+                    donatorOffers.add(requestDonation03,entityList);
+                }
+                else {
+                 phone();   
+                }
+                    return;
+            }
+
         }
+        else if(category_Choice1 == 2)
+        {
+            Service MedicalSupport = new Service("MedicalSupport","Provided by experts in Famiy Medicine.",4);
+            Service NurserySupport = new Service("NurserySupport","Provided by certified nursery care givers.",5);
+            Service BabySitting = new Service("BabySitting","Provided by Primary Education students.",6);
+            
+            System.out.println("1.MedicalSupprt");
+            System.out.println("2.NurserySupport");
+            System.out.println("3.BabySitting");
+            System.out.println("Choose 1 or 2 or 3.");
+            
+            Scanner serviceChoice = new Scanner(System.in);
+            int service_Choice  = serviceChoice.nextInt();
+            
+            if(service_Choice == 1)
+            {
+                System.out.println("MedicalSupprt:");
+                System.out.println(MedicalSupport.getDetails());
+                
+                System.out.println("Would you like to donate MedicalSupport? (y/n)");
+                Scanner scanner_4 = new Scanner(System.in);
+                String Scanner_4 = scanner_4.nextLine();
+                if(Scanner_4 == "y"){
+                    List<Entity> entityList = new ArrayList<>();
+                    RequestDonation requestDonation04 = new RequestDonation(MedicalSupport,4);
+                    Offers donatorOffers = new Offers();
+                    donatorOffers.add(requestDonation04,entityList);
+                }
+                else {
+                 phone();   
+                }
+                    return;
+            }
+            else if(service_Choice == 2)
+            {
+                System.out.println("NurserySupport:");
+                System.out.println(NurserySupport.getDetails());
+                
+                System.out.println("Would you like to donate NurserySupport? (y/n)");
+                Scanner scanner_5 = new Scanner(System.in);
+                String Scanner_5 = scanner_5.nextLine();
+                if(Scanner_5 == "y"){
+                    List<Entity> entityList = new ArrayList<>();
+                    RequestDonation requestDonation05 = new RequestDonation(NurserySupport,5);
+                    Offers donatorOffers = new Offers();
+                    donatorOffers.add(requestDonation05,entityList);
+                }
+                else {
+                 phone();   
+                }
+                    return;
+            }
+            else if(service_Choice == 3)
+            {
+                System.out.println("BabySitting:");
+                System.out.println(BabySitting.getDetails());
+                
+                System.out.println("Would you like to donate BabySitting? (y/n)");
+                Scanner scanner_6 = new Scanner(System.in);
+                String Scanner_6 = scanner_6.nextLine();
+                if(Scanner_6 == "y"){
+                    List<Entity> entityList = new ArrayList<>();
+                    RequestDonation requestDonation06 = new RequestDonation(BabySitting,6);
+                    Offers donatorOffers = new Offers();
+                    donatorOffers.add(requestDonation06,entityList);
+                }
+                else {
+                 phone();   
+                }
+                    return; 
+            }
+            phone();
+        }
+           
+        case 2 :Donator donator01 = new Donator("Maegor", "22810221");
+        
+        Organization organization =  new Organization();
+        System.out.println("Donator's Offers:");
+        System.out.println(organization.getCurrentDonations());
+        
+        break;
+        
+        case 3:
+        System.out.println("Back:");
+        phone();
+        break;
+
+        case 4: 
+         System.out.println("Υou are disconnected.");
+         System.out.println("Do you want to sign in?.");
+         phone();
+        break;
+    
+        case 5: System.out.println("Exit");
+        exit = true;
+        break; 
+        }
+        
     }
-   */
-    public void beneficiary_menu(){
+    
+      public void beneficiary_menu()
+      {
         System.out.println("Choose one option to continue:");
         System.out.println("1.Add Request");
         System.out.println("2.Show Requests");
-        System.out.println("3.Commit");
-        System.out.println("4.Back");
-        System.out.println("5.Logout");
-        System.out.println("6.Exit");
-        System.out.println("Choose 1 or 2 or 3 or 4 or 5 or 6");
+        System.out.println("3.Back");
+        System.out.println("4.Logout");
+        System.out.println("5.Exit");
+        System.out.println("Choose 1 or 2 or 3 or 4 or 5");
         
         Scanner benChoice = new Scanner(System.in);
         int ben_Choice  = benChoice.nextInt();
@@ -377,10 +546,10 @@ public class Menu
         case 1 : System.out.println("Choose 1 or 2.");
         System.out.println("1.Material or 2.Services");
             
-        Scanner categoryChoice = new Scanner(System.in);
-        int category_Choice  = categoryChoice.nextInt();
+        Scanner categoryChoice2 = new Scanner(System.in);
+        int category_Choice2  = categoryChoice2.nextInt();
         
-        if (category_Choice == 1)
+        if (category_Choice2 == 1)
         {
             System.out.println("Choose 1 or 2 or 3.");
             System.out.println("1.Milk");
@@ -493,7 +662,7 @@ public class Menu
                 }    
             }
         }
-        else if(category_Choice== 2)
+        else if(category_Choice2 == 2)
         {
             System.out.println("1.MedicalSupprt");
             System.out.println("2.NurserySupport");
@@ -525,51 +694,55 @@ public class Menu
                 request11ofbeneficiary.add(NurserySupportRequest,entityList);
                 commit();
             }
-            else if(service_Choice == 2)
+            else if(service_Choice == 3)
             {
                 Service BabySitting = new Service("BabySitting","Provided by Primary Education students.",6);
                 System.out.println("BabySitting");
                 System.out.println(BabySitting.getDetails());
-                List<Entity> entityList = new ArrayList<>();   
+                List<Entity> entityList = new ArrayList<>(); 
+                commit();
                 Requests request12ofbeneficiary = new Requests();
                 RequestDonation BabySittingRequest = new RequestDonation(BabySitting,6);
                 request12ofbeneficiary.add(BabySittingRequest,entityList);
-                commit();
             }
             }
-            break;
+            phone();
+            
         case 2 : Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210",3);
  
         Beneficiary beneficiary02 = new Beneficiary("Rhaenys", "22340221",2);
         
+        Organization organization =  new Organization();
         System.out.println("Beneficiary's 01 Requests:");
-        System.out.println(beneficiary01.getReceivedList());
+        System.out.println(organization.getCurrentDonations());
         
         System.out.println("Beneficiary's 02 Requests:");
         System.out.println(beneficiary02.getReceivedList()); 
         
-        case 3:System.out.println();
-          
         break;
         
-        case 4:
+        case 3:
         System.out.println("Back:");
         phone();
+        
         break;
 
-        case 5: 
+        case 4: 
          System.out.println("Υou are disconnected.");
          System.out.println("Do you want to sign in?.");
          phone();
+         
         break;
     
-        case 6: System.out.println("Exit");
+        case 5: System.out.println("Exit");
         exit = true;
+        
         break;   
         }
         }
         
-        public void commit(){  
+    public void commit()
+        {  
         System.out.println("Would you like to add this request of donation? (y/n)");
         Scanner commitScanner = new Scanner(System.in);
         String commit_scanner = commitScanner.nextLine();
@@ -581,796 +754,11 @@ public class Menu
         Requests requests = new Requests();
         requests.commit(entityList,beneficiary,currentDonations);
         System.out.println("This request has been commited successfully!");
-    }
-    
-    else if (commit_scanner=="n")
-    {
-    System.out.println("This request has not been commited.");
-    phone();
-}
-}
-    
-   
-  /*  private int getInput(){
-        Scanner kb = new Scanner(System.in);
-        int Choice = -1;
-        while(Choice < 0 || Choice > 3 ){
-            try{
-                System.out.print("Enter your choice: ");    
-                Choice = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            }
         }
-        return Choice;
-    }
-    
-    private int getInput2(){
-        Scanner kb = new Scanner(System.in);
-        int Choice2 = -1;
-        while(Choice2 < 0 || Choice2 > 3){
-            try{
-                System.out.print("Enter your choice: ");    
-                Choice2 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            } 
+        else if (commit_scanner=="n")
+        {
+        System.out.println("This request has not been commited.");
+        phone();
         }
-        return Choice2;
-    }   
-    
-    private int getInput3(){
-        Scanner kb = new Scanner(System.in);
-        int Choice3 = -1;
-        while(Choice3 < 0 || Choice3 > 3){
-            try{
-                System.out.print("Enter your choice: ");    
-                Choice3 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            } 
-        }
-        return Choice3;
-    }
-        
-    private void performAction(int Choice){
-        switch(Choice){            
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-            System.out.println("choose one material:");
-            System.out.println(" 1. Milk" + "\n 2. Sugar" + "\n 3. Rice");
-                break;
-            case 2:
-                System.out.println("choose one service:");
-
-                System.out.println(" 1. MedicalSupport" + "\n 2. NurserySupport" + "\n 3. BabySitting");
-                break;
-                case 3: exit = true; System.out.println("You are logged out.Do you want to sign up?");
-                phone();
-                break;
-            default:
-                System.out.println("An unknown error has occured");
         }
     }
-    
-    public void materialsList(int Choice2){        
-        switch(Choice2){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                Material milk = new Material("milk","dairy", 1, 1.0, 3.0, 6.0);
-                System.out.println("Milk:");
-                System.out.println(milk.getDetails());
-                System.out.println("do you need milk?yes/no");
-                Scanner scanner_6 = new Scanner(System.in);
-                String Scanner_6 = scanner_6.nextLine();
-                if(Scanner_6 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation1 = new RequestDonation(milk,1);
-                Requests requestofbeneficiary1 = new Requests();
-                requestofbeneficiary1.add(requestDonation1,entityList);}
-
-                else{return;}
-                break;
-            case 2:
-                Material sugar = new Material("sugar","dried food", 2, 1.0, 3.0, 6.0);
-                System.out.println("Sugar," + sugar.getDetails());
-                System.out.println("do you need sugar?yes/no");
-                Scanner scanner_7 = new Scanner(System.in);
-                String Scanner_7 = scanner_7.nextLine();
-                if(Scanner_7 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation2 = new RequestDonation(sugar,1);
-                Requests requestofbeneficiary2 = new Requests();
-                requestofbeneficiary2.add(requestDonation2,entityList);}
-
-                else{return;}
-                break;
-            case 3:
-                Material rice = new Material("rice","dried food", 3, 1.0, 3.0, 6.0);
-                System.out.println("Rice," + rice.getDetails());
-                System.out.println("do you need rice?yes/no");
-                Scanner scanner_8 = new Scanner(System.in);
-                String Scanner_8 = scanner_8.nextLine();
-                if(Scanner_8 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation3 = new RequestDonation(rice,1);
-                Requests requestofbeneficiary3 = new Requests();
-                requestofbeneficiary3.add(requestDonation3,entityList);}
-
-                else{return;}
-                break;
-                
-            default:
-                System.out.println("An unknown error has occured");
-        }
-    }    
-
-    public void servicesList(int Choice3){        
-        switch(Choice3){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                Service MedicalSupport = new Service("MedicalSupport","medical care",4);
-                System.out.println("MedicalSupport");
-                System.out.println("do you need MedicalSupport?yes/no");
-                Scanner scanner_9 = new Scanner(System.in);
-                String Scanner_9 = scanner_9.nextLine();
-                if(Scanner_9 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation4 = new RequestDonation(MedicalSupport,1);
-                Requests requestofbeneficiary4 = new Requests();
-                requestofbeneficiary4.add(requestDonation4,entityList);}
-                else{return;}
-                break;
-            case 2:
-                Service NurserySupport = new Service("NurserySupport","nursery care",5);
-                System.out.println("NurserySupport");
-                System.out.println("do you need NurserySupport?yes/no");
-                Scanner scanner_10= new Scanner(System.in);
-                String Scanner_10 = scanner_10.nextLine();
-                if(Scanner_10 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation5 = new RequestDonation(NurserySupport,1);
-                Requests requestofbeneficiary5 = new Requests();
-                requestofbeneficiary5.add(requestDonation5,entityList);}
-                else{return;}
-                break;
-            case 3:
-                Service BabySitting = new Service("BabySitting","baby sitting",6);
-                System.out.println("Babysitting");
-                System.out.println("do you need Babysitting?yes/no");
-                Scanner scanner_11 = new Scanner(System.in);
-                String Scanner_11 = scanner_11.nextLine();
-                if(Scanner_11 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation6 = new RequestDonation(BabySitting,1);
-                Requests requestofbeneficiary6= new Requests();
-                requestofbeneficiary6.add(requestDonation6,entityList);}
-                else{return;}
-                break;
-            default:
-                System.out.println("An unknown error has occured");
-        }}
-            
-   
-              public void requests(){
-    System.out.println(" Show requests: " + "\n 1. Milk" + "\n 2. Sugar" + "\n 3. Rice" + "\n 4. MedicalSupport" + "\n 5. NurserySupport" + "\n 6. Babysitting" );    
-    }
-    
-    private void performAction2(int Choice4){
-        switch(Choice4){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                System.out.println("Milk");
-                break;
-            case 2:
-                System.out.println("Sugar");
-                break;
-            case 3:
-                System.out.println("Rice");
-                break;
-            case 4:
-                System.out.println("MedicalSupport");
-                break;
-            case 5:
-                System.out.println("NurserySupport");
-                break;
-            case 6:
-                System.out.println("Babysitting");    
-                break;
-            default:
-                System.out.println("An unknown error has occured");
-        }                
-    }
-    
-    private int getInput4(){
-        Scanner kb = new Scanner(System.in);
-        int Choice4 = -1;
-        while(Choice4 < 0 || Choice4 > 6){
-            try{
-                System.out.print("Enter your choice: ");    
-                Choice4 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            } 
-        }
-        return Choice4;
-    }
-    
-    public void removeRequests(){
-        System.out.println("Would you like to remove all of your requests ? ");
-    }
-    
-    public void deleteRd2(int Choice5){
-        switch(Choice5){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                System.out.println(" Would you like to delete this request?" + "\n Yes or No");
-                Scanner scanner_12 = new Scanner(System.in);
-                String Scanner_12 = scanner_12.nextLine();
-                if(Scanner_12 == "yes"){
-                    RequestDonation requestDonation = new RequestDonation();
-                    RequestDonationList requestDonationList = new RequestDonationList();
-                    requestDonationList.remove(requestDonation);
-                }
-                else{return;}
-                break;
-            default:
-                System.out.println("An unknown error has occured");    
-        }
-    }
-    
-    private int getInput5(){
-        Scanner kb = new Scanner(System.in);
-        int Choice5 = -1;
-        while(Choice5 < 0 || Choice5 > 1){
-            try{
-                System.out.print("Enter your choice: ");    
-                Choice5 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            }
-        }
-        return Choice5;
-    }
-        
-    /*public void commit(){        
-        System.out.println("RequestDonation has been added succesfully!");
-        RequestDonationList currentDonations = new RequestDonationList();
-        Beneficiary beneficiary = new Beneficiary();
-        List<Entity> entityList = new ArrayList<>();
-        Requests requests = new Requests();
-        requests.commit(entityList,beneficiary,currentDonations);
-    }
-    
-    public void ModifyRd2(int Choice6)
-    { 
-        switch(Choice6){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                System.out.println(" Would you like to modify this request?" + "\n Yes or No");
-                Scanner scanner_16 = new Scanner(System.in);
-                String Scanner_16 = scanner_16.nextLine();
-                if(Scanner_16 == "yes"){
-                    RequestDonation requestDonation = new RequestDonation();
-                    RequestDonationList requestDonationList = new RequestDonationList();
-                    requestDonationList.modify(requestDonation);
-                }
-                else{return;}
-                break;
-            default:
-                System.out.println("An unknown error has occured");    
-        }
-    }
-    
-    private int getInput16()
-    {
-        Scanner kb = new Scanner(System.in);
-        int Choice6 = -1;
-        while(choice6 < 0 || choice6 > 1){
-            try{
-                System.out.print("Enter your choice(Modify(0) or don't modify(1)): ");    
-                Choice6 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            }
-        }
-        return Choice6;
-    }
-
-    public void resetall2(int Choice7)
-    {
-    switch(Choice7){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                System.out.println(" Would you like to delete all requests?" + "\n Yes or No");
-                Scanner scanner_15 = new Scanner(System.in);
-                String Scanner_15 = scanner_15.nextLine();
-                if(Scanner_15 == "yes"){
-                    RequestDonation requestDonation = new RequestDonation();
-                    RequestDonationList requestDonationList = new RequestDonationList();
-                    requestDonationList.remove(requestDonation);
-                }
-                else{return;}
-                break;
-            default:
-                System.out.println("An unknown error has occured");    
-        }
-    
-    }
-    
-    private int getInput17()
-    {
-        Scanner kb = new Scanner(System.in);
-        int Choice7 = -1;
-        while(Choice7 < 0 || Choice7 > 1){
-            try{
-                System.out.print("Enter your choice(Delete all or don't delete all): ");    
-                choice7 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            }
-        }
-        return Choice7;
-    }
-    
-    
-    public void returnToBack(String string)
-    {if(string.equals("category"))
-    //  {runMenu();}   
-    System.out.print("Enter your choice(Delete all or don't delete all): ");    
-    else{int Choice7 = getInput2(); materialsList(Choice7);
-    }
-
-}
-
-
-
-    boolean exit;
-    int choice;
-    int choice2;
-    int choice3;
-    int choice4;
-    int choice5;
-    int choice6;
-    int choice7;
-    
-    
-    public void runMenu2(){
-        while(!exit){
-            category2();
-            int choice = getInput();
-            performAction(choice);
-            
-            if(choice == 1){
-                int choice2 = getInput2();
-                materialsList(choice2);
-            }
-            
-            else if(choice == 2){
-                int choice3 = getInput3();
-                servicesList(choice3);
-            }
-            
-            offers();
-            int choice4 = getInput4();
-            performAction4(choice4);
-            
-            removeOffers();
-            int choice5 = getInput5();
-            deleteRd2(choice5);
-            
-            int choice6 = getInput11();
-            ModifyRd(choice6);
-            int choice7 = getInput14();
-            resetall(choice7);
-        
-            
-            commit();
-            
-        }
-    }
-    
-    public void returnToBack2(String string){
-        if(string.equals("category")){
-            //runMenu();        
-            System.out.print("Enter your choice(Delete all or don't delete all): ");    
-        }
-        else{
-        int choice7 = getInput2();
-        materialsList(choice7);
-        }
-    }*/
-    
-    public void category2(){
-        System.out.println("WELCOME DONATOR" + " to Donation System" );
-        System.out.println("Add Offer ");
-        System.out.println("choose one category:");
-        System.out.println("1. Materials");
-        System.out.println("2. Services");
-        System.out.println("0. Exit");
-    }
-    
-    private int getInput6(){
-        Scanner kb = new Scanner(System.in);
-        int choice = -1;
-        while(choice < 0 || choice > 2){
-            try{
-                System.out.print("Enter your choice(Materials, Services or Exit): ");    
-                choice = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            }
-        }
-        return choice;
-    }
-    
-    private int getInput7(){
-        Scanner kb = new Scanner(System.in);
-        int choice2 = -1;
-        while(choice2 < 0 || choice2 > 3){
-            try{
-                System.out.print("Enter your choice(Milk, Sugar or Rice): ");    
-                choice2 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            } 
-        }
-        return choice2;
-    }   
-    
-    private int getInput8(){
-        Scanner kb = new Scanner(System.in);
-        int choice3 = -1;
-        while(choice3 < 0 || choice3 > 3){
-            try{
-                System.out.print("Enter your choice:(MedicalSupport, NurserySupport or Babysitting) ");    
-                choice3 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            } 
-        }
-        return choice3;
-    }
-        
-    private void performAction3(int choice){
-        switch(choice){            
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-            System.out.println("choose one material:");
-            System.out.println(" 1. Milk" + "\n 2. Sugar" + "\n 3. Rice");
-                break;
-            case 2:
-                System.out.println("choose one service:");
-
-                System.out.println(" 1. MedicalSupport" + "\n 2. NurserySupport" + "\n 3. BabySitting");
-                break;
-            default:
-                System.out.println("An unknown error has occured");
-        }
-    }
-    
-    public void materialsList2(int choice2){        
-        switch(choice2){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                Material milk = new Material("milk","dairy", 1, 1.0, 3.0, 6.0);
-                System.out.println("Milk:");
-                System.out.println(milk.getDetails());
-                System.out.println("Would you like to donate milk?yes/no");
-                Scanner scanner_6 = new Scanner(System.in);
-                String Scanner_6 = scanner_6.nextLine();
-                if(Scanner_6 == "yes"){
-                    List<Entity> entityList = new ArrayList<>();   
-                    RequestDonation requestDonation1 = new RequestDonation(milk,1);
-                    Offers offerOfDonator1 = new Offers();
-                    offerOfDonator1.add(requestDonation1,entityList);
-                }
-                else {
-                    return;
-                }
-                
-                break;
-            case 2:
-                Material sugar = new Material("sugar","dried food", 2, 1.0, 3.0, 6.0);
-                System.out.println("Sugar," + sugar.getDetails());
-                System.out.println("Would you like to donate sugar?yes/no");
-                Scanner scanner_7 = new Scanner(System.in);
-                String Scanner_7 = scanner_7.nextLine();
-                if(Scanner_7 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation2 = new RequestDonation(sugar,1);
-                Offers offerOfDonator2 = new Offers();
-                offerOfDonator2.add(requestDonation2,entityList);}
-
-                else{return;}
-                break;
-            case 3:
-                Material rice = new Material("rice","dried food", 3, 1.0, 3.0, 6.0);
-                System.out.println("Rice," + rice.getDetails());
-                System.out.println("do you need rice?yes/no");
-                Scanner scanner_8 = new Scanner(System.in);
-                String Scanner_8 = scanner_8.nextLine();
-                if(Scanner_8 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation3 = new RequestDonation(rice,1);
-                Offers offerOfDonator3 = new Offers();
-                offerOfDonator3.add(requestDonation3,entityList);}
-
-                else{return;}
-                break;            
-            default:
-                System.out.println("An unknown error has occured");
-        }
-    }    
-
-    public void servicesList2(int choice3){        
-        switch(choice3){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                Service MedicalSupport = new Service("MedicalSupport","medical care",4);
-                System.out.println("MedicalSupport");
-                System.out.println("Would you like to provide MedicalSupport?yes/no");
-                Scanner scanner_9 = new Scanner(System.in);
-                String Scanner_9 = scanner_9.nextLine();
-                if(Scanner_9 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation4 = new RequestDonation(MedicalSupport,1);
-                Offers offerOfDonator4 = new Offers();
-                offerOfDonator4.add(requestDonation4,entityList);}
-                else{return;}
-                break;
-            case 2:
-                Service NurserySupport = new Service("NurserySupport","nursery care",5);
-                System.out.println("NurserySupport");
-                System.out.println("Would you like to provide NurserySupport?yes/no");
-                Scanner scanner_10= new Scanner(System.in);
-                String Scanner_10 = scanner_10.nextLine();
-                if(Scanner_10 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation5 = new RequestDonation(NurserySupport,1);
-                Offers offerOfDonator5 = new Offers();
-                offerOfDonator5.add(requestDonation5,entityList);}
-                else{return;}
-                break;
-            case 3:
-                Service BabySitting = new Service("BabySitting","baby sitting",6);
-                System.out.println("Babysitting");
-                System.out.println("Would you like to provide Babysitting?yes/no");
-                Scanner scanner_11 = new Scanner(System.in);
-                String Scanner_11 = scanner_11.nextLine();
-                if(Scanner_11 == "yes"){
-                List<Entity> entityList = new ArrayList<>();   
-                RequestDonation requestDonation6 = new RequestDonation(BabySitting,1);
-                Offers offerOfDonator6 = new Offers();
-                offerOfDonator6.add(requestDonation6,entityList);}
-                else{return;}
-                break;
-            default:
-                System.out.println("An unknown error has occured");
-        }
-    } 
-    
-    public void offers(){
-    System.out.println(" Show offers: " + "\n 1. Milk" + "\n 2. Sugar" + "\n 3. Rice" + "\n 4. MedicalSupport" + "\n 5. NurserySupport" + "\n 6. Babysitting" );    
-    }
-    
-    private void performAction4(int choice4){
-        switch(choice4){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                System.out.println("Milk");
-                break;
-            case 2:
-                System.out.println("Sugar");
-                break;
-            case 3:
-                System.out.println("Rice");
-                break;
-            case 4:
-                System.out.println("MedicalSupport");
-                break;
-            case 5:
-                System.out.println("NurserySupport");
-                break;
-            case 6:
-                System.out.println("Babysitting");    
-                break;
-            case 7:
-                returnToBack("category");
-            default:
-                System.out.println("An unknown error has occured");
-        }                
-    }    
-    
-    public void ModifyRd(int choice6)
-    { 
-        switch(choice6){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                System.out.println(" Would you like to modify this offer?" + "\n Yes or No");
-                Scanner scanner_13 = new Scanner(System.in);
-                String Scanner_13 = scanner_13.nextLine();
-                if(Scanner_13 == "yes"){
-                    RequestDonation requestDonation = new RequestDonation();
-                    RequestDonationList requestDonationList = new RequestDonationList();
-                    requestDonationList.modify(requestDonation);
-                }
-                else{return;}
-                break;
-            default:
-                System.out.println("An unknown error has occured");    
-        }
-    
-    
-    }
-    
-    
-    
-    private int getInput9(){
-        Scanner kb = new Scanner(System.in);
-        int choice4 = -1;
-        while(choice4 < 0 || choice4 > 7){
-            try{
-                System.out.print("Enter your choice:(1, 2, 3, 4, 5, 6, 7) ");    
-                choice4 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            } 
-        }
-        return choice4;
-    }
-    
-    public void removeOffers(){
-        System.out.println("Would you like to remove all of your offers ? ");
-    }
-    
-    public void removeRd2(int choice5){
-        switch(choice5){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                System.out.println(" Would you like to delete this offer?" + "\n Yes or No");
-                Scanner scanner_12 = new Scanner(System.in);
-                String Scanner_12 = scanner_12.nextLine();
-                if(Scanner_12 == "yes"){
-                    RequestDonation requestDonation = new RequestDonation();
-                    RequestDonationList requestDonationList = new RequestDonationList();
-                    requestDonationList.remove(requestDonation);
-                }
-                else{return;}
-                break;
-            default:
-                System.out.println("An unknown error has occured");    
-        }
-    }
-    
-    private int getInput10()
-    {
-        Scanner kb = new Scanner(System.in);
-        int choice5 = -1;
-        while(choice5 < 0 || choice5 > 1){
-            try{
-                System.out.print("Enter your choice(Remove(0) or don't remove(1)): ");    
-                choice5 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            }
-        }
-        return choice5;
-    }
-    
-    private int getInput11()
-    {
-        Scanner kb = new Scanner(System.in);
-        int choice6 = -1;
-        while(choice6 < 0 || choice6 > 1){
-            try{
-                System.out.print("Enter your choice(Modify(0) or don't modify(1)): ");    
-                choice6 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            }
-        }
-        return choice6;
-    }
-    
-    public void resetall(int choice7)
-    {
-    switch(choice7){
-            case 0:
-                exit = true;
-                System.out.println("Thank you for using our application.");
-                break;
-            case 1:
-                System.out.println(" Would you like to delete all offers?" + "\n Yes or No");
-                Scanner scanner_14 = new Scanner(System.in);
-                String Scanner_14 = scanner_14.nextLine();
-                if(Scanner_14 == "yes"){
-                    RequestDonation requestDonation = new RequestDonation();
-                    RequestDonationList requestDonationList = new RequestDonationList();
-                    requestDonationList.remove(requestDonation);
-                }
-                else{return;}
-                break;
-            default:
-                System.out.println("An unknown error has occured");    
-        }
-    
-    }
-    
-    private int getInput14()
-    {
-        Scanner kb = new Scanner(System.in);
-        int choice7 = -1;
-        while(choice7 < 0 || choice7 > 1){
-            try{
-                System.out.print("Enter your choice(Delete all or don't delete all): ");    
-                choice7 = Integer.parseInt(kb.nextLine());
-            }
-            catch(NumberFormatException e){
-                System.out.println("Invalid selection. Please try again.");
-            }
-        }
-        return choice7;
-    }
-    
-        
-    public void commit2(){        
-        System.out.println("RequestDonation has been added succesfully!");
-        RequestDonationList currentDonations = new RequestDonationList();
-        List<Entity> entityList = new ArrayList<>();
-        Offers offers = new Offers();
-        offers.commit(currentDonations, entityList);
-    }
-}
