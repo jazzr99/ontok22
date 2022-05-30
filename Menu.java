@@ -412,6 +412,7 @@ public class Menu
                 Requests request2ofbeneficiary = new Requests();
                 RequestDonation milkRequest = new RequestDonation(milk,2);
                 request2ofbeneficiary.add(milkRequest,entityList);
+                commit();
                 }
                 else if(milk_Choose == 3)
                 {
@@ -419,6 +420,7 @@ public class Menu
                 Requests request3ofbeneficiary = new Requests();
                 RequestDonation milkRequest = new RequestDonation(milk,3);
                 request3ofbeneficiary.add(milkRequest,entityList);
+                commit();
                 }    
             }
             else if(material_Choice == 2)
@@ -436,6 +438,7 @@ public class Menu
                 Requests request4ofbeneficiary = new Requests();
                 RequestDonation sugarRequest = new RequestDonation(sugar,1);
                 request4ofbeneficiary.add(sugarRequest,entityList);
+                commit();
                 }
                 else if(sugar_Choose == 2)
                 {
@@ -443,6 +446,7 @@ public class Menu
                 Requests request5ofbeneficiary = new Requests();
                 RequestDonation sugarRequest = new RequestDonation(sugar,2);
                 request5ofbeneficiary.add(sugarRequest,entityList);
+                commit();
                 }
                 else if(sugar_Choose == 3)
                 {
@@ -450,6 +454,7 @@ public class Menu
                 Requests request6ofbeneficiary = new Requests();
                 RequestDonation sugarRequest = new RequestDonation(sugar,3);
                 request6ofbeneficiary.add(sugarRequest,entityList);
+                commit();
                 }    
             }
             else if(material_Choice == 3)
@@ -467,6 +472,7 @@ public class Menu
                 Requests request7ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,1);
                 request7ofbeneficiary.add(riceRequest,entityList);
+                commit();
                 }
                 else if(rice_Choose == 2)
                 {
@@ -474,6 +480,7 @@ public class Menu
                 Requests request8ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,2);
                 request8ofbeneficiary.add(riceRequest,entityList);
+                commit();
                 }
                 else if(rice_Choose == 3)
                 {
@@ -481,6 +488,7 @@ public class Menu
                 Requests request9ofbeneficiary = new Requests();
                 RequestDonation riceRequest = new RequestDonation(rice,3);
                 request9ofbeneficiary.add(riceRequest,entityList);
+                commit();
                 }    
             }
         }
@@ -503,6 +511,7 @@ public class Menu
                 Requests request10ofbeneficiary = new Requests();
                 RequestDonation medicalSupportRequest = new RequestDonation(MedicalSupport,4);
                 request10ofbeneficiary.add(medicalSupportRequest,entityList);
+                commit();
             }
             else if(service_Choice == 2)
             {
@@ -513,6 +522,7 @@ public class Menu
                 Requests request11ofbeneficiary = new Requests();
                 RequestDonation NurserySupportRequest = new RequestDonation(NurserySupport,5);
                 request11ofbeneficiary.add(NurserySupportRequest,entityList);
+                commit();
             }
             else if(service_Choice == 2)
             {
@@ -523,6 +533,7 @@ public class Menu
                 Requests request12ofbeneficiary = new Requests();
                 RequestDonation BabySittingRequest = new RequestDonation(BabySitting,6);
                 request12ofbeneficiary.add(BabySittingRequest,entityList);
+                commit();
             }
             }
             break;
@@ -557,14 +568,27 @@ public class Menu
         }
         }
         
-        public void commit(){        
-        System.out.println("RequestDonation has been added succesfully!");
+        public void commit(){  
+        System.out.println("Would you like to add this request of donation? (y/n)");
+        Scanner commitScanner = new Scanner(System.in);
+        String commit_scanner = commitScanner.nextLine();
+        if (commit_scanner=="y")  
+        {
         RequestDonationList currentDonations = new RequestDonationList();
         Beneficiary beneficiary = new Beneficiary();
         List<Entity> entityList = new ArrayList<>();
         Requests requests = new Requests();
         requests.commit(entityList,beneficiary,currentDonations);
+        System.out.println("This request has been commited successfully!");
     }
+    
+    else if (commit_scanner=="n")
+    {
+    System.out.println("This request has not been commited.");
+    phone();
+}
+}
+    
    
     private int getInput(){
         Scanner kb = new Scanner(System.in);
@@ -828,14 +852,14 @@ public class Menu
         return Choice5;
     }
         
-    public void commit(){        
+    /*public void commit(){        
         System.out.println("RequestDonation has been added succesfully!");
         RequestDonationList currentDonations = new RequestDonationList();
         Beneficiary beneficiary = new Beneficiary();
         List<Entity> entityList = new ArrayList<>();
         Requests requests = new Requests();
         requests.commit(entityList,beneficiary,currentDonations);
-    }
+    }*/
     
     public void ModifyRd2(int Choice6)
     { 
