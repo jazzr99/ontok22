@@ -6,19 +6,24 @@ public class Main{
         List<Entity> entityList = new ArrayList<>();
 
         Organization organization=new Organization();
+        
+        //Insert data for Materials.
     
         Material milk = new Material("Milk","Long life cow milk. (1.5L)", 1, 2.0, 4.0, 10.0);
 
         Material sugar = new Material("Sugar","White granulated sugar. (500g)", 2, 1.0, 4.0, 8.0);
 
         Material rice = new Material("Rice","Basmati rice. (250g)", 3, 2.0, 4.0, 8.0);
+        
+        //Insert data for Services.
     
         Service MedicalSupport = new Service("MedicalSupport","Provided by experts in Famiy Medicine.",4);
 
         Service NurserySupport = new Service("NurserySupport","Provided by certified nursery care givers.",5);
 
         Service BabySitting = new Service("BabySitting","Provided by Primary Education students.",6);
-
+        
+        
         entityList.add(milk);
 
         entityList.add(sugar);
@@ -30,6 +35,9 @@ public class Main{
         entityList.add(NurserySupport);
 
         entityList.add(BabySitting);
+        
+        
+        //Insert data for Users.
 
         Admin admin = new Admin("Aegon", "26102210");
 
@@ -77,3 +85,4 @@ public class Main{
         
     }
 }
+
