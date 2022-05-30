@@ -9,6 +9,7 @@ public abstract class Entity {
         this.description=description;
         this.id=id;
     }
+    // GETTERS-SETTERS
     public void setName(String Name){
     this.name=Name;
     }
