@@ -41,11 +41,11 @@ public class RequestDonationList extends RequestDonation
     }
     public String monitor()
     {
-        for (int x=0; x<rdEntities.size(); x++)
+        for (int n=0; n<rdEntities.size(); n++)
     {
-        return rdEntities.get(x).getDetails();
+        return rdEntities.get(n).getDetails();
     }
-        return "  ";
+        return ".";
     }
     public void reset()
     {
