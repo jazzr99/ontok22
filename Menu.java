@@ -698,13 +698,12 @@ boolean exit;
                 System.out.println("BabySitting");
                 System.out.println(BabySitting.getDetails());
                 List<Entity> entityList = new ArrayList<>(); 
-                commit();
                 Requests request12ofbeneficiary = new Requests();
                 RequestDonation BabySittingRequest = new RequestDonation(BabySitting,6);
                 request12ofbeneficiary.add(BabySittingRequest,entityList);
+                commit();
             }
             }
-            phone();
             
         case 2 : Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210",3);
  
