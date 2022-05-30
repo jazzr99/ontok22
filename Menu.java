@@ -8,7 +8,8 @@ public class Menu
 { 
  public static void main(String[] args)
   {
-      Menu menu = new Menu();
+  boolean exit ;   
+  Menu menu = new Menu();
       
       System.out.println("Welcome!\nDo you have an existing account? (1=yes / 2=no)");
       
