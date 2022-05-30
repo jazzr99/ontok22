@@ -493,7 +493,7 @@ boolean exit;
                     donatorOffers.add(requestDonation06,entityList);
                 }
                 else {
-                 break;;   
+                 break;
                 }
                     return; 
             }
