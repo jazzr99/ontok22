@@ -35,20 +35,20 @@ public class Menu
     
         if(scan_number==26102210)
         {System.out.println("Hello Aegon");
-         admin_menu();
+             admin_menu();
         }
         else if(scan_number==2102210)
         {System.out.println("Hello Visenya");
-         //beneficiary();
+            beneficiary_menu();
         } 
         else if(scan_number==22340221)
         {System.out.println("Hello Rhaenys");
-         //beneficiary();
+             beneficiary_menu();
         }
         else if(scan_number==22810221)
         {System.out.println("Hello Maegor");
          //donator();
-        } 
+        }
     }
  
  public void signing_up()
@@ -374,18 +374,18 @@ public class Menu
     
         switch(ben_Choice)
         {
-            case 1 : System.out.println("1.Material or 2.Services");
-            System.out.println("Choose 1 or 2.");
+        case 1 : System.out.println("Choose 1 or 2.");
+        System.out.println("1.Material or 2.Services");
             
         Scanner categoryChoice = new Scanner(System.in);
         int category_Choice  = categoryChoice.nextInt();
         
         if (category_Choice == 1)
         {
+            System.out.println("Choose 1 or 2 or 3.");
             System.out.println("1.Milk");
             System.out.println("2.Sugar");
             System.out.println("3.Rice");
-            System.out.println("Choose 1 or 2 or 3.");
             
             Scanner materialChoice = new Scanner(System.in);
             int material_Choice  = materialChoice.nextInt();
@@ -405,6 +405,7 @@ public class Menu
                 Requests request1ofbeneficiary = new Requests();
                 RequestDonation milkRequest = new RequestDonation(milk,1);
                 request1ofbeneficiary.add(milkRequest,entityList);
+                commit();
                 }
                 else if(milk_Choose == 2)
                 {
@@ -525,8 +526,46 @@ public class Menu
                 request12ofbeneficiary.add(BabySittingRequest,entityList);
             }
             }
+            break;
+        case 2 : Beneficiary beneficiary01 = new Beneficiary("Visenya", "2102210",3);
+ 
+        Beneficiary beneficiary02 = new Beneficiary("Rhaenys", "22340221",2);
+        
+        System.out.println("Beneficiary's 01 Requests:");
+        System.out.println(beneficiary01.getReceivedList());
+        
+        System.out.println("Beneficiary's 02 Requests:");
+        System.out.println(beneficiary02.getReceivedList()); 
+        
+        case 3:System.out.println();
+          
+        break;
+        
+        case 4:
+        System.out.println("Back:");
+        phone();
+        break;
+
+        case 5: 
+         System.out.println("Υou are disconnected.");
+         System.out.println("Do you want to sign in?.");
+         phone();
+        break;
+    
+        case 6: System.out.println("Exit");
+        exit = true;
+        break;   
         }
         }
+        
+        public void commit(){        
+        System.out.println("RequestDonation has been added succesfully!");
+        RequestDonationList currentDonations = new RequestDonationList();
+        Beneficiary beneficiary = new Beneficiary();
+        List<Entity> entityList = new ArrayList<>();
+        Requests requests = new Requests();
+        requests.commit(entityList,beneficiary,currentDonations);
+    }
    
     private int getInput(){
         Scanner kb = new Scanner(System.in);
