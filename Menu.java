@@ -401,11 +401,11 @@ boolean exit;
                     donatorOffers.add(requestDonation02,entityList);
                 }
                 else {
-                 phone();   
+                 break;   
                 }
                     return;
             }
-            else if(material_Choice == 2)
+            else if(material_Choice == 3)
             {  
                 System.out.println("Rice:");
                 System.out.println(rice.getDetails());
@@ -420,7 +420,7 @@ boolean exit;
                     donatorOffers.add(requestDonation03,entityList);
                 }
                 else {
-                 phone();   
+                 break;   
                 }
                     return;
             }
@@ -455,7 +455,7 @@ boolean exit;
                     donatorOffers.add(requestDonation04,entityList);
                 }
                 else {
-                 phone();   
+                 break;   
                 }
                     return;
             }
@@ -474,7 +474,7 @@ boolean exit;
                     donatorOffers.add(requestDonation05,entityList);
                 }
                 else {
-                 phone();   
+                 break;   
                 }
                     return;
             }
@@ -493,11 +493,11 @@ boolean exit;
                     donatorOffers.add(requestDonation06,entityList);
                 }
                 else {
-                 phone();   
+                 break;;   
                 }
                     return; 
             }
-            phone();
+            
         }
            
         case 2 :Donator donator01 = new Donator("Maegor", "22810221");
