@@ -51,7 +51,7 @@ boolean exit;
              donator_menu();
         }
     }
- 
+ // Signing up form
  public void signing_up()
   {
             System.out.println("Would you like to become Beneficiary or Donator? (1=beneficiary /2=donator)");
@@ -79,7 +79,7 @@ boolean exit;
                 donator_menu();
             }
    }
-
+// Enter the Admin menu
  public void admin_menu()
 {
     System.out.println("Your Info:");
@@ -331,7 +331,7 @@ boolean exit;
     
  }
 }
-
+// Enter the Donator menu
     public void donator_menu()
     {
         System.out.println("Choose one option to continue:");
@@ -525,7 +525,7 @@ boolean exit;
         }
         
     }
-    
+    // Enter the Beneficiary menu
       public void beneficiary_menu()
       {
         System.out.println("Choose one option to continue:");
