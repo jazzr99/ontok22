@@ -949,12 +949,12 @@ public class Menu
     else{int Choice7 = getInput2(); materialsList(Choice7);
     }
 
-}*/
+}
 
 
 
     boolean exit;
-   /* int choice;
+    int choice;
     int choice2;
     int choice3;
     int choice4;
