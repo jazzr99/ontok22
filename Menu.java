@@ -84,10 +84,7 @@ boolean exit;
 {
     System.out.println("Your Info:");
     Admin admin = new Admin("Aegon", "26102210");
-    System.out.println("Name: " + admin.getName());
-    System.out.println("Phone: " + admin.getPhone());
-    System.out.println("IsAdmin: " + admin.getAdmin());
-    System.out.println("Ηow do you want to continue?");
+    System.out.println("Name: " + admin.getName() + "\nPhone: " + admin.getPhone() + "\nAdmin: " + admin.getAdmin() );
     System.out.println("[View(v)/Monitor Organization(mo)/Back(b)/Logout(l)/Exit(e)]");
     
     Scanner scanAdminChoice = new Scanner(System.in);
