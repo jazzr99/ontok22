@@ -7,6 +7,7 @@ public abstract class User {
      this.name=new String(name);
      this.phone=new String(phone);
     }
+    // GETTERS-SETTERS
     public String getPhone(){
         return phone;
     }
