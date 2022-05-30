@@ -590,7 +590,7 @@ public class Menu
 }
     
    
-    private int getInput(){
+  /*  private int getInput(){
         Scanner kb = new Scanner(System.in);
         int Choice = -1;
         while(Choice < 0 || Choice > 3 ){
@@ -859,7 +859,7 @@ public class Menu
         List<Entity> entityList = new ArrayList<>();
         Requests requests = new Requests();
         requests.commit(entityList,beneficiary,currentDonations);
-    }*/
+    }
     
     public void ModifyRd2(int Choice6)
     { 
@@ -948,12 +948,12 @@ public class Menu
     else{int Choice7 = getInput2(); materialsList(Choice7);
     }
 
-}
+}*/
 
 
 
     boolean exit;
-    int choice;
+   /* int choice;
     int choice2;
     int choice3;
     int choice4;
@@ -1006,7 +1006,7 @@ public class Menu
         int choice7 = getInput2();
         materialsList(choice7);
         }
-    }
+    }*/
     
     public void category2(){
         System.out.println("WELCOME DONATOR" + " to Donation System" );
