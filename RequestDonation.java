@@ -17,6 +17,7 @@ class RequestDonation
         }
      return false;
     }
+    // GETTERS-SETTERS
     public Entity getEntity() {
         return entity;
     }
