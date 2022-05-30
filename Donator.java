@@ -3,6 +3,7 @@ public class Donator extends User{
     public Donator(String name, String phone){
         super(name, phone);
     }
+    // GETTER-SETTER
     public void setOffersList(Offers offersList){
     this.offersList = offersList;
     }
